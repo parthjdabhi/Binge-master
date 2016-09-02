@@ -1,5 +1,5 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "12569442731712C4BECF9AC259351B462B0A5673",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "60AA0D425624D645B5397DD0A545FF23CD30D5C2",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
@@ -8,6 +8,7 @@
     "C4B85D7D0D846037D00BA357778A09A4F23CDD5B" : 0,
     "7DD36ADE790772A961F16EC81BFBD95F02D5F44F" : 0,
     "DC16CE93D23C65FF6471CBD74201A34945C11BE7" : 0,
+    "60AA0D425624D645B5397DD0A545FF23CD30D5C2" : 0,
     "1EA13FE91CB4B602845B47545F678E8E595999FB" : 0,
     "12569442731712C4BECF9AC259351B462B0A5673" : 0,
     "AA095B9DBA89F20CCB87D6EE301AEF4D96BC8259" : 0,
@@ -20,6 +21,7 @@
     "C4B85D7D0D846037D00BA357778A09A4F23CDD5B" : "What2Watch---iOS-master\/",
     "7DD36ADE790772A961F16EC81BFBD95F02D5F44F" : "What2Watch-App-iPad-iPhone-Screen-Separate-Storyboards-2\/",
     "DC16CE93D23C65FF6471CBD74201A34945C11BE7" : "What2Watch\/",
+    "60AA0D425624D645B5397DD0A545FF23CD30D5C2" : "Binge-master\/",
     "1EA13FE91CB4B602845B47545F678E8E595999FB" : "What2watch-iOS-Dev\/",
     "12569442731712C4BECF9AC259351B462B0A5673" : "What2watch-iOS-Dev-master-master\/",
     "AA095B9DBA89F20CCB87D6EE301AEF4D96BC8259" : "What2Watch-master-%2017%20Aug%20Morning\/",
@@ -49,6 +51,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/parthjdabhi\/What2WatchDev",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "554D9454161D491A07B2D4A1FC19804C2E62D9A7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/parthjdabhi\/Binge-master.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "60AA0D425624D645B5397DD0A545FF23CD30D5C2"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/parthjdabhi\/What2watch-iOS-Dev-master.git",

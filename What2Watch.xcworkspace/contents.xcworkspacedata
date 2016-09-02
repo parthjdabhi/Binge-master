@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/dustin/Downloads/What2watch-iOS-Dev-master-master/What2Watch.xcodeproj">
+      location = "group:What2Watch.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

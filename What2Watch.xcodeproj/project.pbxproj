@@ -223,7 +223,7 @@
 		DA1200CB1D4A641200D5EC20 /* Background7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background7.png; sourceTree = "<group>"; };
 		DA1200CC1D4A641200D5EC20 /* Background8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background8.png; sourceTree = "<group>"; };
 		DA1200D51D4A649900D5EC20 /* Background10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background10.png; sourceTree = "<group>"; };
-		DA21C4251D39409400E6843E /* What2Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = What2Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA21C4251D39409400E6843E /* Binge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Binge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA21C4281D39409400E6843E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA21C42A1D39409400E6843E /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		DA21C42D1D39409400E6843E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -466,7 +466,7 @@
 		DA21C4261D39409400E6843E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA21C4251D39409400E6843E /* What2Watch.app */,
+				DA21C4251D39409400E6843E /* Binge.app */,
 				DA21C43C1D39409400E6843E /* What2Watch.xctest */,
 				DA21C4471D39409400E6843E /* What2Watch.xctest */,
 			);
@@ -677,7 +677,7 @@
 			);
 			name = What2Watch;
 			productName = What2Watch;
-			productReference = DA21C4251D39409400E6843E /* What2Watch.app */;
+			productReference = DA21C4251D39409400E6843E /* Binge.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DA21C43B1D39409400E6843E /* What2WatchTests */ = {
@@ -1195,7 +1195,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harloch.What2Watch;
-				PRODUCT_NAME = What2Watch;
+				PRODUCT_NAME = Binge;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
@@ -1213,7 +1213,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harloch.What2Watch;
-				PRODUCT_NAME = What2Watch;
+				PRODUCT_NAME = Binge;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";

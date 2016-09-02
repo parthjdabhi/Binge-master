@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e2S-gn-vZb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e2S-gn-vZb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -35,7 +35,7 @@
         <!--My Slide Menu Controller-->
         <scene sceneID="12T-Ig-k8a">
             <objects>
-                <viewController storyboardIdentifier="MySlideMenuController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ugq-D9-u7P" customClass="MySlideMenuController" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MySlideMenuController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ugq-D9-u7P" customClass="MySlideMenuController" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vf7-vS-tGw"/>
                         <viewControllerLayoutGuide type="bottom" id="5MT-MC-Mrp"/>
@@ -373,7 +373,7 @@
         <!--Main Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainScreenViewController" modalTransitionStyle="flipHorizontal" modalPresentationStyle="pageSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainScreenViewController" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainScreenViewController" modalTransitionStyle="flipHorizontal" modalPresentationStyle="pageSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainScreenViewController" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -498,7 +498,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="AOb-Q4-N51">
             <objects>
-                <viewController id="JOk-go-5HF" customClass="SignUpViewController" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JOk-go-5HF" customClass="SignUpViewController" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jKX-Rc-Qgj"/>
                         <viewControllerLayoutGuide type="bottom" id="0Fk-5V-CNx"/>
@@ -964,7 +964,7 @@
         <!--Photo View Controller-->
         <scene sceneID="zb3-Ie-C1E">
             <objects>
-                <viewController storyboardIdentifier="PhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AWA-UQ-XnJ" customClass="PhotoViewController" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AWA-UQ-XnJ" customClass="PhotoViewController" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nrx-2T-j4z"/>
                         <viewControllerLayoutGuide type="bottom" id="McO-EE-Oxz"/>
@@ -1251,7 +1251,7 @@
         <!--Tutorial View Controller-->
         <scene sceneID="SYV-Q7-bSM">
             <objects>
-                <viewController storyboardIdentifier="SignUpViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Cl-7a-CTc" customClass="TutorialViewController" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Cl-7a-CTc" customClass="TutorialViewController" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uLu-Pm-Q5b"/>
                         <viewControllerLayoutGuide type="bottom" id="mrf-f0-U2c"/>
@@ -1296,7 +1296,7 @@
         <!--Tutorial Page View Controller-->
         <scene sceneID="MtI-dp-0zu">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Mod-dN-Zvy" customClass="TutorialPageViewController" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Mod-dN-Zvy" customClass="TutorialPageViewController" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mwn-P8-IAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1306,7 +1306,7 @@
         <!--Tutorial Page View Controller-->
         <scene sceneID="R0W-0O-lCG">
             <objects>
-                <viewController id="XIJ-Ff-hx1" customClass="TutorialPageViewController" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XIJ-Ff-hx1" customClass="TutorialPageViewController" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j4x-Y7-UWB"/>
                         <viewControllerLayoutGuide type="bottom" id="Zcp-uM-icD"/>
@@ -1345,7 +1345,7 @@
         <!--Profile Picture View Controller-->
         <scene sceneID="Pj8-bo-SYY">
             <objects>
-                <viewController storyboardIdentifier="PictureViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sWn-73-6e8" customClass="ProfilePictureViewController" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PictureViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sWn-73-6e8" customClass="ProfilePictureViewController" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TnA-uC-eyE"/>
                         <viewControllerLayoutGuide type="bottom" id="aYZ-cS-PjN"/>
@@ -1457,7 +1457,7 @@
         <!--View Controller-->
         <scene sceneID="qqm-s4-0Kc">
             <objects>
-                <viewController storyboardIdentifier="DOBViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mG4-i4-KpO" customClass="DOBViewController" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DOBViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mG4-i4-KpO" customClass="DOBViewController" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jto-Vq-Vax"/>
                         <viewControllerLayoutGuide type="bottom" id="z23-ej-Rv8"/>
@@ -1553,7 +1553,7 @@
         <!--Gender View Controller-->
         <scene sceneID="zRE-Cn-YH5">
             <objects>
-                <viewController storyboardIdentifier="NationalityViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wOM-fU-YaI" customClass="GenderViewController" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NationalityViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wOM-fU-YaI" customClass="GenderViewController" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oub-5M-HrY"/>
                         <viewControllerLayoutGuide type="bottom" id="ijx-p5-uzj"/>
@@ -1767,7 +1767,7 @@
         <!--Terms View Controller-->
         <scene sceneID="kaj-MK-8E6">
             <objects>
-                <viewController storyboardIdentifier="TermsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cWz-yj-whr" customClass="TermsViewController" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TermsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cWz-yj-whr" customClass="TermsViewController" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BAF-Js-8JV"/>
                         <viewControllerLayoutGuide type="bottom" id="39a-AT-LAe"/>
@@ -1789,6 +1789,10 @@
                                     <constraint firstAttribute="height" constant="18" id="ldC-nn-ioR"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="von-pT-IW2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wew-jl-UoE">
                                 <rect key="frame" x="47" y="240" width="280" height="187"/>
                                 <subviews>
@@ -1868,10 +1872,6 @@
                                     <constraint firstAttribute="width" constant="80" id="htc-Hf-jK3"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="von-pT-IW2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1918,7 +1918,7 @@
         <!--Email View Controller-->
         <scene sceneID="ZQY-3W-d8Q">
             <objects>
-                <viewController storyboardIdentifier="RedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2eF-cb-2nE" customClass="EmailViewController" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2eF-cb-2nE" customClass="EmailViewController" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8XP-dx-OuK"/>
                         <viewControllerLayoutGuide type="bottom" id="k1m-PR-eT5"/>
@@ -2014,7 +2014,7 @@
         <!--Name View Controller-->
         <scene sceneID="zaa-Ma-SpF">
             <objects>
-                <viewController storyboardIdentifier="BlueViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tBc-3N-ozv" customClass="NameViewController" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BlueViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tBc-3N-ozv" customClass="NameViewController" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S1r-KC-ADA"/>
                         <viewControllerLayoutGuide type="bottom" id="sCi-Qt-AQN"/>
@@ -2154,7 +2154,7 @@
         <!--RecomendationVC-->
         <scene sceneID="aW2-TW-0pe">
             <objects>
-                <viewController id="tXF-5q-S5X" customClass="RecomendationVC" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tXF-5q-S5X" customClass="RecomendationVC" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XZc-SM-kcJ"/>
                         <viewControllerLayoutGuide type="bottom" id="0xa-OI-657"/>
@@ -2262,7 +2262,7 @@
         <!--My Profile View Controller-->
         <scene sceneID="heh-KI-leU">
             <objects>
-                <viewController id="mlj-zg-tPA" customClass="MyProfileViewController" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mlj-zg-tPA" customClass="MyProfileViewController" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZKF-ii-mMg"/>
                         <viewControllerLayoutGuide type="bottom" id="vQw-jj-Euk"/>
@@ -2353,15 +2353,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="208" id="tGg-Na-oUt"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BMc-eb-etT" customClass="PDCarouselFlowLayout" customModule="What2Watch" customModuleProvider="target">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BMc-eb-etT" customClass="PDCarouselFlowLayout" customModule="Binge" customModuleProvider="target">
                                     <size key="itemSize" width="232" height="208"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SliderCollectionViewCell" id="Pfz-oN-mDu" customClass="SliderCollectionViewCell" customModule="What2Watch" customModuleProvider="target">
-                                        <rect key="frame" x="71.5" y="0.0" width="232" height="208"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SliderCollectionViewCell" id="Pfz-oN-mDu" customClass="SliderCollectionViewCell" customModule="Binge" customModuleProvider="target">
+                                        <rect key="frame" x="72" y="0.0" width="232" height="208"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="232" height="208"/>
@@ -2457,7 +2457,7 @@
         <!--Movie WatchedVC-->
         <scene sceneID="VXM-Kz-QDt">
             <objects>
-                <viewController storyboardIdentifier="MovieWatchedVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ddP-aa-qYI" customClass="MovieWatchedVC" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieWatchedVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ddP-aa-qYI" customClass="MovieWatchedVC" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BZ7-rq-XvM"/>
                         <viewControllerLayoutGuide type="bottom" id="oxV-En-5U2"/>
@@ -2528,7 +2528,7 @@
                                 <rect key="frame" x="20" y="207" width="335" height="452"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieListTableViewCell" rowHeight="36" id="hks-fD-t7I" customClass="MovieListTableViewCell" customModule="What2Watch" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieListTableViewCell" rowHeight="36" id="hks-fD-t7I" customClass="MovieListTableViewCell" customModule="Binge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="335" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hks-fD-t7I" id="mfT-ud-8Nx">
@@ -2827,7 +2827,7 @@
         <!--Watchlist View Controller-->
         <scene sceneID="zx5-EU-p7M">
             <objects>
-                <viewController storyboardIdentifier="WatchlistViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hMt-N4-1LA" customClass="WatchlistViewController" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WatchlistViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hMt-N4-1LA" customClass="WatchlistViewController" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JVG-oG-n4w"/>
                         <viewControllerLayoutGuide type="bottom" id="bcg-vH-tyK"/>
@@ -2895,7 +2895,7 @@
                                 <rect key="frame" x="20" y="207" width="335" height="452"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieListTableViewCell" rowHeight="36" id="W5d-hE-TSC" customClass="MovieListTableViewCell" customModule="What2Watch" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieListTableViewCell" rowHeight="36" id="W5d-hE-TSC" customClass="MovieListTableViewCell" customModule="Binge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="335" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W5d-hE-TSC" id="fTg-b7-EwL">
@@ -2978,7 +2978,7 @@
         <!--HelpVC-->
         <scene sceneID="AvK-Q3-IJv">
             <objects>
-                <viewController id="ODM-rq-ufS" customClass="HelpVC" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ODM-rq-ufS" customClass="HelpVC" customModule="Binge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1rN-Pe-7DR"/>
                         <viewControllerLayoutGuide type="bottom" id="yOJ-cF-OgN"/>

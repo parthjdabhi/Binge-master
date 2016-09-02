@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DA21C43B1D39409400E6843E"
-               BuildableName = "What2WatchTests.xctest"
+               BuildableName = "What2Watch.xctest"
                BlueprintName = "What2WatchTests"
                ReferencedContainer = "container:What2Watch.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DA21C4461D39409400E6843E"
-               BuildableName = "What2WatchUITests.xctest"
+               BuildableName = "What2Watch.xctest"
                BlueprintName = "What2WatchUITests"
                ReferencedContainer = "container:What2Watch.xcodeproj">
             </BuildableReference>
