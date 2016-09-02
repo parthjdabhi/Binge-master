@@ -1,0 +1,6 @@
+framework module Pods_What2WatchUITests {
+  umbrella header "Pods-What2WatchUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
