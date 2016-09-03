@@ -45,18 +45,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
           application.registerForRemoteNotifications()
         
         
-        /// Uncomnet this section for if user is logged in it redirect to main screen on applocation opens
+        /// Uncomnet this section for if user is logged in it redirect to main screen when application opens
         
-        /*if let user = FIRAuth.auth()?.currentUser
+        if let user = FIRAuth.auth()?.currentUser
         {
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let rootViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SWRevealViewController") as? UIViewController
-            let navigationController = UINavigationController(rootViewController: rootViewController!)
+            let navigationController = UINavigationController(rootViewController: rootViewController)
             navigationController.navigationBarHidden = true // or not, your choice.
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
             self.window!.rootViewController = navigationController
             self.window!.makeKeyAndVisible()
-        }*/
+        }
         
         
 //        let movieDetail = "http://www.omdbapi.com/"  //http:// www.omdbapi.com/?i=(*imdbID*)&plot=short&r=json

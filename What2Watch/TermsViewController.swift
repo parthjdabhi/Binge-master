@@ -70,7 +70,9 @@ class TermsViewController: BaseViewController, UIPageViewControllerDelegate {
         approvedCheckbox.hidden = true
     }
     
-    @IBAction func getStartedButton(sender: AnyObject) {
+    @IBAction func getStartedButton(sender: AnyObject)
+    {
+        
         let emailInfo : String = String(TermsViewController.emailAddress)
         let passwordInfo : String = String(TermsViewController.userPassword)
         let firstNameInfo : String = String(TermsViewController.firstName)
@@ -91,7 +93,8 @@ class TermsViewController: BaseViewController, UIPageViewControllerDelegate {
         if emailInfo != "" && passwordInfo != "" {
             CommonUtils.sharedUtils.showProgress(self.view, label: "Registering...")
             FIRAuth.auth()?.createUserWithEmail(emailInfo, password: passwordInfo, completion:  { (user, error) in
-                if error == nil {
+                if error == nil
+                {
                     FIREmailPasswordAuthProvider.credentialWithEmail(emailInfo, password: passwordInfo)
                     self.ref.child("users").child(user!.uid).setValue(["userFirstName": firstNameInfo, "userLastName": lastNameInfo, "userGender": userSex, "userNationality": userOrigin, "userDOB": userDOB, "email": emailInfo])
                     if userPicture == "" {

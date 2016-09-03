@@ -98,6 +98,10 @@ class TutorialViewController: UIViewController {
         print("Go to \(page) page")
     }
     
+    func GoToMainScreen() {
+        print("Go To main screen")
+    }
+    
 }
 
 extension TutorialViewController: TutorialPageViewControllerDelegate {
