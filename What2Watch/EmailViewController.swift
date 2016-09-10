@@ -23,20 +23,10 @@ class EmailViewController: BaseViewController, UITextFieldDelegate, UITextViewDe
         ref = FIRDatabase.database().reference()
         user = FIRAuth.auth()?.currentUser
         
-        let paddingView = UIView(frame:CGRectMake(0, 0, 30, 30))
-        emailField.leftView = paddingView;
-        emailField.leftViewMode = UITextFieldViewMode.Always
-        emailField.text = "Email Address"
-        emailField.textColor = UIColor.whiteColor()
-        passwordField.text = "Password"
-        passwordField.textColor = UIColor.whiteColor()
-        let paddingForFirst = UIView(frame: CGRectMake(0, 0, 30, self.passwordField.frame.size.height))
-        //Adding the padding to the second textField
-        passwordField.leftView = paddingForFirst
-        passwordField.leftViewMode = UITextFieldViewMode .Always
-        
-        passwordField.font = UIFont(name: passwordField.font!.fontName, size: 15)
-        
+        emailField.setPlaceholderColor()
+        passwordField.setPlaceholderColor()
+        emailField.setLeftMargin(20)
+        passwordField.setLeftMargin(20)
         self.emailField.delegate = self
         self.passwordField.delegate = self
     }
@@ -65,9 +55,21 @@ class EmailViewController: BaseViewController, UITextFieldDelegate, UITextViewDe
         return false
     }
     
-    func textViewDidBeginEditing(textView: UITextView) {
-        self.emailField.text = ""
-        self.passwordField.text = ""
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if textField == emailField {
+            animateViewMoving(16)
+        } else if textField == passwordField {
+            animateViewMoving(26)
+        }
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField)
+    {
+        if textField == emailField {
+            animateViewMoving(16,up: false)
+        } else if textField == passwordField {
+            animateViewMoving(50,up: false)
+        }
     }
     
     @IBAction func didEnterEmail(sender: AnyObject) {

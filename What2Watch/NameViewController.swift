@@ -24,27 +24,18 @@ class NameViewController: BaseViewController, UITextFieldDelegate, UITextViewDel
         ref = FIRDatabase.database().reference()
         user = FIRAuth.auth()?.currentUser
 
-        let paddingView = UIView(frame:CGRectMake(0, 0, 30, 30))
-        firstNameField.leftView = paddingView;
-        firstNameField.leftViewMode = UITextFieldViewMode.Always
-        firstNameField.text = "First Name"
-        firstNameField.textColor = UIColor.whiteColor()
-        lastNameField.text = "Last Name"
-        lastNameField.textColor = UIColor.whiteColor()
-        let paddingForFirst = UIView(frame: CGRectMake(0, 0, 30, self.lastNameField.frame.size.height))
-        lastNameField.leftView = paddingForFirst
-        lastNameField.leftViewMode = UITextFieldViewMode .Always
-        lastNameField.font = UIFont(name: lastNameField.font!.fontName, size: 15)
+        firstNameField.setPlaceholderColor()
+        lastNameField.setPlaceholderColor()
+        firstNameField.setLeftMargin(20)
+        lastNameField.setLeftMargin(20)
 
         self.firstNameField.delegate = self
         self.lastNameField.delegate = self
-        
         
         //self.saveData()
     }
     
     override func viewDidAppear(animated: Bool) {
-        
         self.background.fadeOut(completion: {
             (finished: Bool) -> Void in
             self.background.fadeIn()
@@ -68,9 +59,21 @@ class NameViewController: BaseViewController, UITextFieldDelegate, UITextViewDel
         return false
     }
     
-    func textViewDidBeginEditing(textView: UITextView) {
-        self.firstNameField.text = ""
-        self.lastNameField.text = ""
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if textField == firstNameField {
+            animateViewMoving(16)
+        } else if textField == lastNameField {
+            animateViewMoving(26)
+        }
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField)
+    {
+        if textField == firstNameField {
+            animateViewMoving(16,up: false)
+        } else if textField == lastNameField {
+            animateViewMoving(26,up: false)
+        }
     }
     
     @IBAction func firstNameEntry(sender: AnyObject) {

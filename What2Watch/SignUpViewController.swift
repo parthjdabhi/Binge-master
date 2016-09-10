@@ -119,19 +119,19 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
                 // 2
                 let imagePickerActionSheet = UIAlertController(title: "Snap/Upload Photo",
                                                                message: nil, preferredStyle: .ActionSheet)
-        //        // 3
-        //        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-        //            let cameraButton = UIAlertAction(title: "Take Photo",
-        //                                             style: .Default) { (alert) -> Void in
-        //                                                self.imagePickerController = UIImagePickerController()
-        //                                                self.imagePickerController.delegate = self
-        //                                                self.imagePickerController.sourceType = .Camera
-        //                                                self.presentViewController(self.imagePickerController,
-        //                                                                           animated: true,
-        //                                                                           completion: nil)
-        //            }
-        //            imagePickerActionSheet.addAction(cameraButton)
-        //        }
+                // 3
+                if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+                    let cameraButton = UIAlertAction(title: "Take Photo",
+                                                     style: .Default) { (alert) -> Void in
+                                                        self.imagePickerController = UIImagePickerController()
+                                                        self.imagePickerController.delegate = self
+                                                        self.imagePickerController.sourceType = .Camera
+                                                        self.presentViewController(self.imagePickerController,
+                                                                                   animated: true,
+                                                                                   completion: nil)
+                    }
+                    imagePickerActionSheet.addAction(cameraButton)
+                }
                 // 4
                 let libraryButton = UIAlertAction(title: "Choose Existing",
                                                   style: .Default) { (alert) -> Void in
@@ -272,17 +272,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
         self.imgTaken = true
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
     func imagePickerControllerDidCancel(picker: UIImagePickerController){
-        
+        self.dismissViewControllerAnimated(true, completion: nil);
     }
     
-    func imgToBase64(image: UIImage) -> String {
-        let imageData:NSData = UIImagePNGRepresentation(image)!
-        let base64String = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
-        print(base64String)
-        
-        return base64String
-    }
     
     @IBAction func nationalityButton(sender: AnyObject) {
         
@@ -313,26 +307,33 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
         self.view.layoutIfNeeded();
         scrollView.contentOffset = CGPointMake(0, 85);
     }
-    @IBAction func getStartedButton(sender: AnyObject) {
+    
+    @IBAction func getStartedButton(sender: AnyObject)
+    {
         let email = self.emailField.text!
         let password = self.passwordField.text!
         // make sure the user entered both email & password
         if email != "" && password != "" {
             CommonUtils.sharedUtils.showProgress(self.view, label: "Registering...")
             FIRAuth.auth()?.createUserWithEmail(email, password: password, completion:  { (user, error) in
-                if error == nil {
+                if error == nil
+                {
                     let uploadImage : UIImage = self.picture.image!
-                    let base64String = self.imgToBase64(uploadImage)
+                    let base64String = uploadImage.imgToBase64()
                     FIREmailPasswordAuthProvider.credentialWithEmail(email, password: password)
                     self.ref.child("users").child(user!.uid).setValue(["userFirstName": self.firstNameField.text!, "userLastName": self.lastNameField.text!, "userGender": self.genderLabel.text!, "userNationality": self.nationalityLabel.text!, "userDOB": self.dobLabel.text!, "email": email])
+                    
                     if self.imgTaken == false {
                         CommonUtils.sharedUtils.showAlert(self, title: "Alert!", message: "Please select the photo")
                         return
                     }
+                    
                     self.ref.child("users").child(user!.uid).child("image").setValue(base64String)
                     CommonUtils.sharedUtils.hideProgress()
+                    
                     let mainViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainScreenViewController") as! MainScreenViewController!
                     self.navigationController?.pushViewController(mainViewController, animated: true)
+                    
                 } else {
                     dispatch_async(dispatch_get_main_queue(), {() -> Void in
                         CommonUtils.sharedUtils.hideProgress()

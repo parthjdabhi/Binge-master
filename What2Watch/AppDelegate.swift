@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         {
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let rootViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SWRevealViewController") as? UIViewController
-            let navigationController = UINavigationController(rootViewController: rootViewController)
+            let navigationController = UINavigationController(rootViewController: rootViewController!)
             navigationController.navigationBarHidden = true // or not, your choice.
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
             self.window!.rootViewController = navigationController

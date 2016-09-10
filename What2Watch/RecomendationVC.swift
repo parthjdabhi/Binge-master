@@ -8,24 +8,41 @@
 
 import UIKit
 import Foundation
-import Firebase
-import SWRevealViewController
 
+import Firebase
 import SDWebImage
 import SWRevealViewController
 import UIActivityIndicator_for_SDWebImage
 
-class RecomendationVC: UIViewController {
+import Koloda
+import pop
 
+private let frameAnimationSpringBounciness: CGFloat = 9
+private let frameAnimationSpringSpeed: CGFloat = 16
+private let kolodaCountOfVisibleCards = 2
+private let kolodaAlphaValueSemiTransparent: CGFloat = 0.05
+
+
+class RecomendationVC: UIViewController {
+    
+    
     @IBOutlet var btnMenu: UIButton?
     @IBOutlet var lblMsgCentered: UILabel?
     @IBOutlet var imgPoster: UIImageView?
     
+    @IBOutlet var vInstruction: UIView!
+    @IBOutlet var imgInstruction: UIImageView!
+    @IBOutlet weak var cardHolderView: CustomKolodaView!
+    
+    
     //50% of my like should be match with other user to give recommendation
-    let MyLikePer:Float = 4
-    var MinLikeMovieToMatch = 1 //50% of my total Like
+    let MyLikePer:Float = 50
+    var MinLikeMovieToMatch = 50 //50% of my total Like
     
     var movieSwiped:Array<[String:AnyObject]> = []
+    var movies:Array<[String:AnyObject]> = []
+    var accu_movies:Array<[String:AnyObject]> = []
+    var lastSwipedMovie:String?
     
     var ref = FIRDatabase.database().reference()
     
@@ -34,6 +51,15 @@ class RecomendationVC: UIViewController {
 
         // Do any additional setup after loading the view.
         lblMsgCentered?.text = "Finding best recommendation for you"
+        
+        cardHolderView.alphaValueSemiTransparent = kolodaAlphaValueSemiTransparent
+        cardHolderView.countOfVisibleCards = kolodaCountOfVisibleCards
+        cardHolderView.delegate = self
+        cardHolderView.dataSource = self
+        cardHolderView.animator = BackgroundKolodaAnimatorTest(koloda: cardHolderView)
+        cardHolderView.backgroundColor = UIColor.whiteColor()
+        
+        vInstruction.alpha = 0
         
         if let revealVC = self.revealViewController() {
             self.btnMenu?.addTarget(revealVC, action: #selector(revealVC.revealToggle(_:)), forControlEvents: .TouchUpInside)
@@ -208,6 +234,7 @@ class RecomendationVC: UIViewController {
                             }
                         }
                         
+                        
                         //shuffel position in array and show random movie as recommendation
                         AppState.sharedInstance.My_Like_Recom_MovieID_top2000.shuffleInPlace()
                         
@@ -222,6 +249,9 @@ class RecomendationVC: UIViewController {
                             
                             print(" \(index) Movie: \(imdbID) , Image: \(posterURL)")
                             self.imgPoster?.setImageWithURL(posterNSURL, placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions.AllowInvalidSSLCertificates, usingActivityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+                            
+                            self.cardHolderView.reloadData()
+                            
                         } else {
                             
                             let alertController = UIAlertController(title: "Swipe More", message: "You haven't swiped enough movies to generate a recommendation.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -233,7 +263,6 @@ class RecomendationVC: UIViewController {
                             alertController.addAction(okAction)
                             self.presentViewController(alertController, animated: true, completion: nil)
                         }
-                        
                     } else {
                         
                         let alertController = UIAlertController(title: "Swipe More", message: "You haven't swiped enough movies to generate a recommendation.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -283,5 +312,214 @@ class RecomendationVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func SaveSwipeEntry(forIndex: Int,Status: String)
+    {
+        if forIndex >= AppState.sharedInstance.My_Like_Recom_MovieID_top2000.count {
+            return
+        }
+        
+//        var Movie =  AppState.sharedInstance.My_Like_Recom_MovieID_top2000[forIndex]
+//        Movie["status"] = Status
+//        
+//        FIRDatabase.database().reference().child("swiped").child(FIRAuth.auth()?.currentUser?.uid ?? "").child(Movie["key"] as? String ?? "").setValue(Movie)
+//        
+//        let imdbID = Movie["imdbID"] as? String ?? ""
+//        FIRDatabase.database().reference().child("users").child(AppState.MyUserID()).child("lastSwiped").child("top2000").setValue(imdbID)
+//        
+//        if let genre = movies[forIndex]["genre"] as? String
+//            where AppState.sharedInstance.accu_All_top2000 != nil
+//        {
+//            if var value = AppState.sharedInstance.accu_All_top2000![genre] {
+//                value = value + 1
+//                AppState.sharedInstance.accu_All_top2000![genre] = value
+//            } else {
+//                AppState.sharedInstance.accu_All_top2000![genre] = 1
+//            }
+//            
+//            if var value = AppState.sharedInstance.accu_All_top2000!["Total"] {
+//                value = value + 1
+//                AppState.sharedInstance.accu_All_top2000!["Total"] = value
+//            } else {
+//                AppState.sharedInstance.accu_All_top2000!["Total"] = 1
+//            }
+//            
+//            print(" accu_All_top2000 \(AppState.sharedInstance.accu_All_top2000) ")
+//            FIRDatabase.database().reference().child("users").child(AppState.MyUserID()).child("accuracy_top2000").child("all").setValue(AppState.sharedInstance.accu_All_top2000!)
+//            
+//            if Status == status_like
+//                && AppState.sharedInstance.accu_Like_top2000 != nil
+//            {
+//                if var value = AppState.sharedInstance.accu_Like_top2000![genre] {
+//                    value = value + 1
+//                    AppState.sharedInstance.accu_Like_top2000![genre] = value
+//                } else {
+//                    AppState.sharedInstance.accu_Like_top2000![genre] = 1
+//                }
+//                
+//                if var value = AppState.sharedInstance.accu_Like_top2000!["Total"] {
+//                    value = value + 1
+//                    AppState.sharedInstance.accu_Like_top2000!["Total"] = value
+//                } else {
+//                    AppState.sharedInstance.accu_Like_top2000!["Total"] = 1
+//                }
+//                
+//                print(" accu_Like_top2000 \(AppState.sharedInstance.accu_Like_top2000) ")
+//                FIRDatabase.database().reference().child("users").child(AppState.MyUserID()).child("accuracy_top2000").child(status_like).setValue(AppState.sharedInstance.accu_Like_top2000!)
+//            }
+//            else if Status == status_dislike
+//                && AppState.sharedInstance.accu_Dislike_top2000 != nil
+//            {
+//                if var value = AppState.sharedInstance.accu_Dislike_top2000![genre] {
+//                    value = value + 1
+//                    AppState.sharedInstance.accu_Dislike_top2000![genre] = value
+//                } else {
+//                    AppState.sharedInstance.accu_Dislike_top2000![genre] = 1
+//                }
+//                
+//                if var value = AppState.sharedInstance.accu_Dislike_top2000!["Total"] {
+//                    value = value + 1
+//                    AppState.sharedInstance.accu_Dislike_top2000!["Total"] = value
+//                } else {
+//                    AppState.sharedInstance.accu_Dislike_top2000!["Total"] = 1
+//                }
+//                
+//                print(" accu_Dislike_top2000 \(AppState.sharedInstance.accu_Dislike_top2000) ")
+//                FIRDatabase.database().reference().child("users").child(AppState.MyUserID()).child("accuracy_top2000").child(status_dislike).setValue(AppState.sharedInstance.accu_Dislike_top2000!)
+//            }
+//            else if Status == status_watchlist
+//                && AppState.sharedInstance.accu_Watched_top2000 != nil
+//            {
+//                if var value = AppState.sharedInstance.accu_Watched_top2000![genre] {
+//                    value = value + 1
+//                    AppState.sharedInstance.accu_Watched_top2000![genre] = value
+//                } else {
+//                    AppState.sharedInstance.accu_Watched_top2000![genre] = 1
+//                }
+//                
+//                if var value = AppState.sharedInstance.accu_Watched_top2000!["Total"] {
+//                    value = value + 1
+//                    AppState.sharedInstance.accu_Watched_top2000!["Total"] = value
+//                } else {
+//                    AppState.sharedInstance.accu_Watched_top2000!["Total"] = 1
+//                }
+//                
+//                print(" accu_Watched_top2000 \(AppState.sharedInstance.accu_Watched_top2000) ")
+//                FIRDatabase.database().reference().child("users").child(AppState.MyUserID()).child("accuracy_top2000").child(status_watchlist).setValue(AppState.sharedInstance.accu_Watched_top2000!)
+//            }
+//            else if Status == status_haventWatched
+//                && AppState.sharedInstance.accu_Havnt_top2000 != nil
+//            {
+//                if var value = AppState.sharedInstance.accu_Havnt_top2000![genre] {
+//                    value = value + 1
+//                    AppState.sharedInstance.accu_Havnt_top2000![genre] = value
+//                } else {
+//                    AppState.sharedInstance.accu_Havnt_top2000![genre] = 1
+//                }
+//                
+//                if var value = AppState.sharedInstance.accu_Havnt_top2000!["Total"] {
+//                    value = value + 1
+//                    AppState.sharedInstance.accu_Havnt_top2000!["Total"] = value
+//                } else {
+//                    AppState.sharedInstance.accu_Havnt_top2000!["Total"] = 1
+//                }
+//                
+//                print(" accu_Havnt_top2000 \(AppState.sharedInstance.accu_Havnt_top2000) ")
+//                FIRDatabase.database().reference().child("users").child(AppState.MyUserID()).child("accuracy_top2000").child(status_haventWatched).setValue(AppState.sharedInstance.accu_Havnt_top2000!)
+//            }
+//        }
+        
+    }
 
+}
+
+//MARK: KolodaViewDelegate
+extension RecomendationVC: KolodaViewDelegate {
+    
+    func kolodaDidRunOutOfCards(koloda: KolodaView) {
+        cardHolderView.resetCurrentCardIndex()
+    }
+    
+    func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
+        let movieDescriptionViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MovieDescriptionViewController") as! MovieDescriptionViewController!
+        movieDescriptionViewController.movieDetail = ["imdbID": "\(movies[Int(index)])"]
+        self.navigationController?.pushViewController(movieDescriptionViewController, animated: true)
+    }
+    
+    
+    
+    func kolodaShouldApplyAppearAnimation(koloda: KolodaView) -> Bool {
+        return true
+    }
+    
+    func kolodaShouldMoveBackgroundCard(koloda: KolodaView) -> Bool {
+        return false
+    }
+    
+    func kolodaShouldTransparentizeNextCard(koloda: KolodaView) -> Bool {
+        return true
+    }
+    
+    func kolodaSwipeThresholdRatioMargin(koloda: KolodaView) -> CGFloat? {
+        return 0.4
+    }
+    func koloda(kolodaBackgroundCardAnimation koloda: KolodaView) -> POPPropertyAnimation? {
+        let animation = POPSpringAnimation(propertyNamed: kPOPViewFrame)
+        animation.springBounciness = frameAnimationSpringBounciness
+        animation.springSpeed = frameAnimationSpringSpeed
+        return animation
+    }
+    
+    func koloda(koloda: KolodaView, allowedDirectionsForIndex index: UInt) -> [SwipeResultDirection] {
+        return [.Up]
+    }
+    
+    
+    func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
+        
+        switch direction {
+        case .Left, .TopLeft, .BottomLeft:
+            print("Disliked")
+            SaveSwipeEntry(Int(index), Status: status_dislike)
+            break
+        case .Right, .TopRight, .BottomRight:
+            print("Liked")
+            SaveSwipeEntry(Int(index), Status: status_like)
+            break
+        case .Up:
+            print("Haven't Watched")
+            SaveSwipeEntry(Int(index), Status: status_haventWatched)
+            break
+        case .Down:
+            print("Watchlist")
+            SaveSwipeEntry(Int(index), Status: status_watchlist)
+            break
+        }
+    }
+}
+
+//MARK: KolodaViewDataSource
+extension RecomendationVC: KolodaViewDataSource {
+    
+    func kolodaNumberOfCards(koloda: KolodaView) -> UInt {
+        return UInt(AppState.sharedInstance.My_Like_Recom_MovieID_top2000.count)
+    }
+    
+    func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
+        let imgPoster = UIImageView(frame: koloda.frame)
+        let imdbID = AppState.sharedInstance.My_Like_Recom_MovieID_top2000[Int(index)] ?? ""
+        let posterURL = "http://img.omdbapi.com/?i=\(imdbID)&apikey=57288a3b&h=1000"
+        let posterNSURL = NSURL(string: "\(posterURL)")
+        
+        print(" \(index) Movie: \(imdbID) , Image: \(posterURL)")
+        imgPoster.setImageWithURL(posterNSURL, placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions.AllowInvalidSSLCertificates, usingActivityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+        return imgPoster
+        //        return UIImageView(image: UIImage(named: "cards_\(index + 1)"))
+    }
+    
+    func koloda(koloda: KolodaView, viewForCardOverlayAtIndex index: UInt) -> OverlayView? {
+        return NSBundle.mainBundle().loadNibNamed("CustomOverlayView",
+                                                  owner: self, options: nil)[0] as? OverlayView
+    }
+    
 }

@@ -33,3 +33,28 @@ class BackgroundKolodaAnimator: KolodaViewAnimator {
     }
     
 }
+
+
+class BackgroundKolodaAnimatorTest: KolodaViewAnimator {
+    
+    override func applyScaleAnimation(card: DraggableCardView, scale: CGSize, frame: CGRect, duration: NSTimeInterval, completion: AnimationCompletionBlock) {
+        
+        let scaleAnimation = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY)
+        scaleAnimation.springBounciness = 5
+        scaleAnimation.springSpeed = 10
+        scaleAnimation.toValue = NSValue(CGSize: scale)
+        card.layer.pop_addAnimation(scaleAnimation, forKey: "scaleAnimation")
+        
+        let frameAnimation = POPSpringAnimation(propertyNamed: kPOPViewFrame)
+        frameAnimation.springBounciness = 5
+        frameAnimation.springSpeed = 10
+        frameAnimation.toValue = NSValue(CGRect: frame)
+        if let completion = completion {
+            frameAnimation.completionBlock = { _, finished in
+                completion(finished)
+            }
+        }
+        card.pop_addAnimation(frameAnimation, forKey: "frameAnimation")
+    }
+    
+}

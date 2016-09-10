@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseDatabase
 
 class MyProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -56,8 +57,13 @@ class MyProfileViewController: UIViewController, UICollectionViewDelegate, UICol
         imgProfile.layer.masksToBounds = true
         imgProfile.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.2).CGColor
         
-        lblDisplayName.text = AppState.sharedInstance.displayName
-        imgProfile.image = AppState.sharedInstance.myProfile ?? UIImage(named: "user.png")
+        if let image = AppState.sharedInstance.myProfile {
+            lblDisplayName.text = AppState.sharedInstance.displayName
+            imgProfile.image = image ?? UIImage(named: "user.png")
+        } else {
+            imgProfile.image = UIImage(named: "user.png")
+            RefreshProfiledata()
+        }
         
         let imgTapGesture = UITapGestureRecognizer(target: self, action: #selector(MyProfileViewController.onTapProfilePic(_:)) )
         imgTapGesture.numberOfTouchesRequired = 1
@@ -86,6 +92,30 @@ class MyProfileViewController: UIViewController, UICollectionViewDelegate, UICol
         return UIStatusBarStyle.LightContent
     }
     
+    func RefreshProfiledata()
+    {
+        CommonUtils.sharedUtils.showProgress(self.view, label: "Loading profile..")
+        //let ref = FIRDatabase.database().reference()
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        ref.child("users").child(userID!).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            CommonUtils.sharedUtils.hideProgress()
+            if snapshot.exists() {
+                AppState.sharedInstance.currentUser = snapshot
+                if let base64String = snapshot.value!["image"] as? String {
+                    // decode image
+                    // self.imgProfile?.image = CommonUtils.sharedUtils.decodeImage(base64String)
+                    AppState.sharedInstance.myProfile = CommonUtils.sharedUtils.decodeImage(base64String)
+                    self.imgProfile?.image = AppState.sharedInstance.myProfile ?? UIImage(named: "user.png")
+                }
+                let userFirstName = AppState.sharedInstance.currentUser?.value?["userFirstName"] as? String ?? ""
+                let userLastName = AppState.sharedInstance.currentUser?.value?["userLastName"] as? String ?? ""
+                AppState.sharedInstance.displayName = "\(userFirstName) \(userLastName)"
+                self.lblDisplayName?.text =  AppState.sharedInstance.displayName
+                
+            }
+        })
+    }
+    
     //    @IBAction func actionBack(sender: AnyObject) {
     //        self.navigationController?.popViewControllerAnimated(true)
     //    }
@@ -111,6 +141,19 @@ class MyProfileViewController: UIViewController, UICollectionViewDelegate, UICol
         // 2
         let imagePickerActionSheet = UIAlertController(title: "Snap/Upload Photo",
                                                        message: nil, preferredStyle: .ActionSheet)
+        // 3
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            let cameraButton = UIAlertAction(title: "Take Photo",
+                                             style: .Default) { (alert) -> Void in
+                                                self.imagePickerController = UIImagePickerController()
+                                                self.imagePickerController.delegate = self
+                                                self.imagePickerController.sourceType = .Camera
+                                                self.presentViewController(self.imagePickerController,
+                                                                           animated: true,
+                                                                           completion: nil)
+            }
+            imagePickerActionSheet.addAction(cameraButton)
+        }
         
         let libraryButton = UIAlertAction(title: "Choose Existing",
                                           style: .Default) { (alert) -> Void in
@@ -161,24 +204,24 @@ class MyProfileViewController: UIViewController, UICollectionViewDelegate, UICol
             imgProfile.image = scaleImage(pickedImage, maxDimension: 300)
             AppState.sharedInstance.myProfile = imgProfile.image
             
-            let base64String = self.imgToBase64(imgProfile.image!)
+            let base64String = (imgProfile.image!).imgToBase64()
             let strProfile = base64String as String
+            let Data = ["image": strProfile]
             
-            FIRDatabase.database().reference().child("users").child(AppState.MyUserID()).setValue(strProfile, forKey: "image")
+            CommonUtils.sharedUtils.showProgress(self.view, label: "Updating profile..")
+            FIRDatabase.database().reference().child("users").child(AppState.MyUserID()).updateChildValues(Data, withCompletionBlock: { (error, ref) in
+                CommonUtils.sharedUtils.hideProgress()
+                if error == nil {
+                    CommonUtils.sharedUtils.showAlert(self, title: "Message", message: "Profile updated succcessfully!")
+                }
+            })
         }
 
         dismissViewControllerAnimated(true, completion: nil)
     }
-    func imagePickerControllerDidCancel(picker: UIImagePickerController){
-        
-    }
     
-    func imgToBase64(image: UIImage) -> String {
-        let imageData:NSData = UIImagePNGRepresentation(image)!
-        let base64String = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
-        print(base64String)
-        
-        return base64String
+    func imagePickerControllerDidCancel(picker: UIImagePickerController){
+        self.dismissViewControllerAnimated(true, completion: nil);
     }
     
     // MARK: - Card Collection Delegate & DataSource

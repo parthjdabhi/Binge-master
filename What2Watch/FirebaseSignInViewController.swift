@@ -15,24 +15,12 @@ import FBSDKShareKit
 //import Fabric
 import SWRevealViewController
 
-extension UIColor {
-    convenience init(rgb: UInt) {
-        self.init(
-            red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgb & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgb & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
-}
 
 @objc(FirebaseSignInViewController)
 class FirebaseSignInViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet var facebook: UIButton!
-    
-  
     @IBOutlet weak var emailField: UITextField!
     
     @IBOutlet weak var passwordField: UITextField!
@@ -42,30 +30,17 @@ class FirebaseSignInViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        emailField.text = "Email"
-//        emailField.textColor = UIColor.whiteColor()
-//        passwordField.text = "Password"
-//        passwordField.textColor = UIColor.whiteColor()
-        login.layer.borderWidth = 0
+        self.hideKeyboardWhenTappedAround()
+        
         view.backgroundColor = UIColor(rgb: 0x282828)
-        
-//        let attributesDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),NSFontAttributeName:UIFont.fontNamesForFamilyName("Arial")]
-//        emailField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: attributesDictionary)
-        
         facebook.hidden = true
+        login.layer.borderWidth = 0
+        emailField.setPlaceholderColor()
+        passwordField.setPlaceholderColor()
         
-        emailField.text = "Email"
-        passwordField.text = "Password"
+        emailField.setLeftMargin()
+        passwordField.setLeftMargin()
         
-    }
-    
-    func textViewDidEndEditing(textView: UITextView) {
-        if textView.text.isEmpty {
-            emailField.text = "Email"
-//            emailField.textColor = UIColor.whiteColor()
-            passwordField.text = "Password"
-            passwordField.textColor = UIColor.whiteColor()
-        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -99,9 +74,10 @@ class FirebaseSignInViewController: UIViewController, UITextFieldDelegate {
                     print(error.localizedDescription)
                 }
                 else{
-                    //                    self.signedIn(user!)
-                    let mainScreenViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainScreenViewController") as! MainScreenViewController!
-                    self.navigationController?.pushViewController(mainScreenViewController, animated: true)
+                    self.performSegueWithIdentifier("segueMainScreen", sender: self)
+                    
+//                    let mainScreenViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainScreenViewController") as! MainScreenViewController!
+//                    self.navigationController?.pushViewController(mainScreenViewController, animated: true)
                 }
             }
         }

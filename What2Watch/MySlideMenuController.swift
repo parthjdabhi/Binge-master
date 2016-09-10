@@ -51,8 +51,9 @@ class MySlideMenuController : UIViewController {
         super.viewDidLoad()
         self.view.layoutIfNeeded()
         
-        txtSearchbar?.layer.cornerRadius = (txtSearchbar?.frame.size.height)!/2
-        txtSearchbar?.layer.masksToBounds = true
+        txtSearchbar?.setCornerRadious((txtSearchbar?.frame.size.height)!/2)
+        txtSearchbar?.setLeftMargin()
+        txtSearchbar?.setPlaceholderColor()
         
         let paddingView : UIView = UIView(frame: CGRectMake(0, 0, 16, 20))
         txtSearchbar?.leftView = paddingView

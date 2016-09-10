@@ -64,6 +64,9 @@ class TutorialViewController: UIViewController {
             (viewController as? BaseViewController)?.view.layoutSubviews()
             //(viewController as? BaseViewController)?.view.layoutIfNeeded()
             
+            (viewController as? BaseViewController)?.goBackSelectorClosure = {
+                self.navigationController?.popViewControllerAnimated(true)
+            }
             self.scrollView.addSubview(viewController.view)
         }
     }
@@ -73,7 +76,6 @@ class TutorialViewController: UIViewController {
             instantiateViewControllerWithIdentifier("\(color)ViewController") as! BaseViewController
         VC.delegate = self
         VC.goNextSelectorClosure = {
-            
             print("goNextSelectorClosure called")
             self.scrollView.setContentOffset(CGPointMake(CGFloat(UIScreen.mainScreen().bounds.width * CGFloat(nextIndex)), 0), animated: true)
 //            [scrollView scrollRectToVisible:CGRectMake(scrollView. *pageNumber, 0, 320 , 240) animated:NO];
@@ -81,7 +83,6 @@ class TutorialViewController: UIViewController {
         return VC
     }
 
-    
     /*
     @IBAction func didTapNextButton(sender: UIButton) {
         tutorialPageViewController?.scrollToNextViewController()

@@ -49,6 +49,21 @@ class ProfilePictureViewController: BaseViewController, UIImagePickerControllerD
         let imagePickerActionSheet = UIAlertController(title: "Snap/Upload Photo",
                                                        message: nil, preferredStyle: .ActionSheet)
 
+        // 3
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            let cameraButton = UIAlertAction(title: "Take Photo",
+                                             style: .Default) { (alert) -> Void in
+                                                self.imagePickerController = UIImagePickerController()
+                                                self.imagePickerController.delegate = self
+                                                self.imagePickerController.sourceType = .Camera
+                                                self.presentViewController(self.imagePickerController,
+                                                                           animated: true,
+                                                                           completion: nil)
+            }
+            imagePickerActionSheet.addAction(cameraButton)
+        }
+        
+        // 4
         let libraryButton = UIAlertAction(title: "Choose Existing",
                                           style: .Default) { (alert) -> Void in
                                             self.imagePickerController = UIImagePickerController()
@@ -59,6 +74,7 @@ class ProfilePictureViewController: BaseViewController, UIImagePickerControllerD
                                                                        completion: nil)
         }
         imagePickerActionSheet.addAction(libraryButton)
+        
         // 5
         let cancelButton = UIAlertAction(title: "Cancel",
                                          style: .Cancel) { (alert) -> Void in
@@ -105,28 +121,26 @@ class ProfilePictureViewController: BaseViewController, UIImagePickerControllerD
         }
         
         self.xIcon.hidden = true
-        self.profilePicture.hidden = true
+        //self.profilePicture.hidden = true
+        self.profilePicture.setImage(nil, forState: .Normal)
         
         let uploadImage : UIImage = self.picture.image!
-        let base64String = self.imgToBase64(uploadImage)
+        let base64String = uploadImage.imgToBase64()
         TermsViewController.picture = base64String as String
         
         self.imgTaken = true
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    func imagePickerControllerDidCancel(picker: UIImagePickerController){
-        
+        dismissViewControllerAnimated(true) {
+            self.goNextSelectorClosure?()
+        }
     }
     
-    func imgToBase64(image: UIImage) -> String {
-        let imageData:NSData = UIImagePNGRepresentation(image)!
-        let base64String = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
-        print(base64String)
-        
-        return base64String
+    func imagePickerControllerDidCancel(picker: UIImagePickerController){
+        self.dismissViewControllerAnimated(true, completion: nil);
     }
+    
     
     @IBAction func backButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil);
+        self.goBackSelectorClosure?()
+        //self.dismissViewControllerAnimated(true, completion: nil);
     }
 }

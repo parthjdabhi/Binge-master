@@ -613,9 +613,8 @@ extension MainScreenViewController: KolodaViewDataSource {
                 let watchlist_per = (per_Watchlist / Answer)
                 let HaventWatched_per = (per_HaventWatched / Answer)
                 
-                
                 //---------------------------------------------------
-                //i am getting this final percentage as wrong
+                // i am getting this final percentage as wrong
                 //---------------------------------------------------
                 print("dislike_per % : \(dislike_per)")
                 print("liked_per % : \(liked_per)")

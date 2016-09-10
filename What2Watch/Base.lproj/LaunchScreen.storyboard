@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,10 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NEW logo with text final.png" translatesAutoresizingMaskIntoConstraints="NO" id="7QO-6l-rro">
-                                <rect key="frame" x="205" y="192" width="190" height="215"/>
+                                <rect key="frame" x="210" y="210" width="180" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="215" id="FiL-Dl-fsF"/>
-                                    <constraint firstAttribute="width" constant="190" id="NI9-UY-TjA"/>
+                                    <constraint firstAttribute="width" secondItem="7QO-6l-rro" secondAttribute="height" multiplier="1:1" id="EJq-SD-qwS"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -29,6 +29,7 @@
                         <constraints>
                             <constraint firstItem="7QO-6l-rro" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ALp-Lb-OD1"/>
                             <constraint firstItem="7QO-6l-rro" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="EYu-pE-s2x"/>
+                            <constraint firstItem="7QO-6l-rro" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="3:10" id="kLU-QK-t2g"/>
                         </constraints>
                     </view>
                 </viewController>

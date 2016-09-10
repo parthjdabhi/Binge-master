@@ -69,8 +69,10 @@ class GenderViewController: BaseViewController {
             //self.nationalityButton.setTitle("\(index)", forState: UIControlState.Normal)
             TermsViewController.origin = self.nationality.text!
 
+            self.goNextSelectorClosure?()
+            
             return
-            }, cancelBlock: { ActionStringCancelBlock in return }, origin: sender)
+        }, cancelBlock: { ActionStringCancelBlock in return }, origin: sender)
     }
     
     @IBAction func backButton(sender: AnyObject) {

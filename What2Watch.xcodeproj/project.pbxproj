@@ -1189,15 +1189,15 @@
 			baseConfigurationReference = 456CA0EC35A30FBEEE432C46 /* Pods-What2Watch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = What2Watch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harloch.What2Watch;
 				PRODUCT_MODULE_NAME = What2Watch;
 				PRODUCT_NAME = Binge;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "66ae2d55-2e53-47e7-b78c-6fb0e3c89063";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
@@ -1208,15 +1208,15 @@
 			baseConfigurationReference = 2E7C62499DA8136DD46F0006 /* Pods-What2Watch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = What2Watch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harloch.What2Watch;
 				PRODUCT_MODULE_NAME = What2Watch;
 				PRODUCT_NAME = Binge;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "66ae2d55-2e53-47e7-b78c-6fb0e3c89063";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};

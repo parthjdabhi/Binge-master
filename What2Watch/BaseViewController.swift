@@ -19,11 +19,17 @@ class BaseViewController: UIViewController {
     
     var goNextSelectorClosure: Optional<() -> ()> = nil
     var goPrevSelectorClosure: Optional<() -> ()> = nil
+    var goBackSelectorClosure: Optional<() -> ()> = nil
+    
+    //var Base:UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+//        goBackSelectorClosure = {
+//            self.navigationController?.popViewControllerAnimated(true)
+//        }
     }
 
     override func didReceiveMemoryWarning() {

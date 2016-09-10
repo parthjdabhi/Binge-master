@@ -64,7 +64,7 @@ class WatchlistViewController: UIViewController {
                 
                 }, withCancelBlock: { error in
                     print(error.description)
-                    MBProgressHUD.hideHUDForView(self.view, animated: true)
+                    CommonUtils.sharedUtils.hideProgress()
             })
     }
     

@@ -30,7 +30,6 @@ class MovieDescriptionViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         
-        
         lblPlot.lineBreakMode = NSLineBreakMode.ByWordWrapping
         lblPlot.numberOfLines = 0
         lblCast.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -39,6 +38,10 @@ class MovieDescriptionViewController: UIViewController, UITextFieldDelegate {
         lblMovieTitle.text = "\( movieDetail?["movieTitle"] ?? "" )"
         //lblGenere.text = "Genere : \( movieDetail?["genre"] ?? "" )"
  
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+        poster.userInteractionEnabled = true
+        poster.addGestureRecognizer(tapGestureRecognizer)
+        
         let posterURL = "http://img.omdbapi.com/?i=\(movieDetail?["imdbID"] ?? "")&apikey=57288a3b&h=1000"
         let posterNSURL = NSURL(string: "\(posterURL)")
         self.poster.setImageWithURL(posterNSURL, placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions.AllowInvalidSSLCertificates, completed: { (imgPoster, error, cacheType, urlPoster) in
@@ -81,6 +84,11 @@ class MovieDescriptionViewController: UIViewController, UITextFieldDelegate {
         self.view.layoutIfNeeded()
     }
     
+    func imageTapped(img: AnyObject)
+    {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     override func  preferredStatusBarStyle()-> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
@@ -91,14 +99,6 @@ class MovieDescriptionViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func actionSearch(sender: AnyObject) {
     }
-    
 }
 
 
-extension UILabel{
-    func addTextSpacing(spacing: CGFloat){
-        let attributedString = NSMutableAttributedString(string: self.text!)
-        attributedString.addAttribute(NSKernAttributeName, value: spacing, range: NSRange(location: 0, length: self.text!.characters.count))
-        self.attributedText = attributedString
-    }
-}
