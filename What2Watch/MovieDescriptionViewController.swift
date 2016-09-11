@@ -38,7 +38,7 @@ class MovieDescriptionViewController: UIViewController, UITextFieldDelegate {
         lblMovieTitle.text = "\( movieDetail?["movieTitle"] ?? "" )"
         //lblGenere.text = "Genere : \( movieDetail?["genre"] ?? "" )"
  
-        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(MovieDescriptionViewController.imageTapped(_:)))
         poster.userInteractionEnabled = true
         poster.addGestureRecognizer(tapGestureRecognizer)
         

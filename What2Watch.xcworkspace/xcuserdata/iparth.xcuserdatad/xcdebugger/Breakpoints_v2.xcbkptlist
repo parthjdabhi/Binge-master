@@ -811,55 +811,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "495205681.010599"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "495205681.010599"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "495205681.010599"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "495205681.010599"
+            timestampString = "495301261.32703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
@@ -875,11 +827,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "495205681.010599"
+            timestampString = "495301261.32703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -891,11 +843,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "495205681.010599"
+            timestampString = "495301261.32703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -907,11 +859,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "495205681.010599"
+            timestampString = "495301261.32703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "What2Watch/RecomendationVC.swift"
+            timestampString = "495301261.32703"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "What2Watch/RecomendationVC.swift"
+            timestampString = "495301261.32703"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "What2Watch/RecomendationVC.swift"
+            timestampString = "495301261.32703"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1051,11 +1051,11 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/MyProfileViewController.swift"
-                  timestampString = "495210132.377119"
+                  timestampString = "495297736.470627"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "187"
-                  endingLineNumber = "187"
+                  startingLineNumber = "202"
+                  endingLineNumber = "202"
                   offsetFromSymbolStart = "30">
                </Location>
                <Location
@@ -1066,12 +1066,60 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/MyProfileViewController.swift"
-                  timestampString = "495210132.377594"
+                  timestampString = "495297736.470764"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "187"
-                  endingLineNumber = "187"
+                  startingLineNumber = "202"
+                  endingLineNumber = "202"
                   offsetFromSymbolStart = "317">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "What2Watch/RecomendationVC.swift"
+            timestampString = "495301261.32703"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "320"
+            endingLineNumber = "320"
+            landmarkName = "imageTapped(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "What2Watch.RecomendationVC.imageTapped (Swift.AnyObject) -&gt; ()"
+                  moduleName = "Binge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/RecomendationVC.swift"
+                  timestampString = "495297736.471647"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "327"
+                  endingLineNumber = "327"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "What2Watch.RecomendationVC.(imageTapped (Swift.AnyObject) -&gt; ()).(closure #1)"
+                  moduleName = "Binge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/RecomendationVC.swift"
+                  timestampString = "495297736.471789"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "328"
+                  endingLineNumber = "328"
+                  offsetFromSymbolStart = "19">
                </Location>
             </Locations>
          </BreakpointContent>

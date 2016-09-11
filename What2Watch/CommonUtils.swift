@@ -38,3 +38,14 @@ class CommonUtils: NSObject {
         return image!
     }
 }
+
+
+/*
+FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
+    if let user = user {
+        // User is signed in.
+    } else {
+        // No user is signed in.
+    }
+}
+*/

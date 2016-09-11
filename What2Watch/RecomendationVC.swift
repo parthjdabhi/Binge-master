@@ -10,9 +10,11 @@ import UIKit
 import Foundation
 
 import Firebase
-import SDWebImage
 import SWRevealViewController
+
+import SDWebImage
 import UIActivityIndicator_for_SDWebImage
+import Alamofire
 
 import Koloda
 import pop
@@ -28,12 +30,17 @@ class RecomendationVC: UIViewController {
     
     @IBOutlet var btnMenu: UIButton?
     @IBOutlet var lblMsgCentered: UILabel?
-    @IBOutlet var imgPoster: UIImageView?
-    
-    @IBOutlet var vInstruction: UIView!
-    @IBOutlet var imgInstruction: UIImageView!
     @IBOutlet weak var cardHolderView: CustomKolodaView!
     
+    //Instriction View
+    @IBOutlet var vInstruction: UIView!
+    @IBOutlet var imgInstruction: UIImageView!
+    @IBOutlet var imgPoster: UIImageView?
+    @IBOutlet var lblMovieTitle: UILabel!
+    @IBOutlet var lblGenere: UILabel!
+    @IBOutlet var lblYear: UILabel!
+    @IBOutlet var lblDirector: UILabel!
+    @IBOutlet var lblLikes: UILabel!
     
     //50% of my like should be match with other user to give recommendation
     let MyLikePer:Float = 50
@@ -60,12 +67,17 @@ class RecomendationVC: UIViewController {
         cardHolderView.backgroundColor = UIColor.whiteColor()
         
         vInstruction.alpha = 0
+        self.imgPoster?.setCornerRadious((self.imgPoster?.frame.width ?? 1)/2)
         
         if let revealVC = self.revealViewController() {
             self.btnMenu?.addTarget(revealVC, action: #selector(revealVC.revealToggle(_:)), forControlEvents: .TouchUpInside)
             self.view.addGestureRecognizer(revealVC.panGestureRecognizer());
             //            self.navigationController?.navigationBar.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(RecomendationVC.imageTapped(_:)))
+        vInstruction.userInteractionEnabled = true
+        vInstruction.addGestureRecognizer(tapGestureRecognizer)
         
         CommonUtils.sharedUtils.showProgress(self.view, label: "Loading..")
 //        ref.child("swiped").child(AppState.MyUserID()).observeSingleEventOfType(.Value, withBlock: { snapshot in
@@ -242,14 +254,7 @@ class RecomendationVC: UIViewController {
                             print("\n\nGot \(AppState.sharedInstance.My_Like_Recom_MovieID_top2000) Recommendation movie\n\n")
                             print(AppState.sharedInstance.My_Like_Recom_MovieID_top2000)
                             
-                            //Black&WhitePeople
-                            let imdbID = AppState.sharedInstance.My_Like_Recom_MovieID_top2000[0]
-                            let posterURL = "http://img.omdbapi.com/?i=\(imdbID)&apikey=57288a3b&h=1000"
-                            let posterNSURL = NSURL(string: "\(posterURL)")
-                            
-                            print(" \(index) Movie: \(imdbID) , Image: \(posterURL)")
-                            self.imgPoster?.setImageWithURL(posterNSURL, placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions.AllowInvalidSSLCertificates, usingActivityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
-                            
+                            self.ShowMovieDetail(AppState.sharedInstance.My_Like_Recom_MovieID_top2000[0])
                             self.cardHolderView.reloadData()
                             
                         } else {
@@ -303,6 +308,21 @@ class RecomendationVC: UIViewController {
     }
     
 
+    func imageTapped(img: AnyObject)
+    {
+        //self.navigationController?.popViewControllerAnimated(true)
+        //Hide Card Instruction and show swippable card view.
+        
+//        UIView.animateWithDuration(0.5, animations: {
+//            self.vInstruction.alpha = 0
+//        })
+        
+        UIView.animateWithDuration(0.3, animations: {
+            self.vInstruction.alpha = 0
+        })
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -312,6 +332,56 @@ class RecomendationVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    func ShowMovieDetail(imdbID:String)
+    {
+        
+        //Black&WhitePeople
+        let imdbID = AppState.sharedInstance.My_Like_Recom_MovieID_top2000[0]
+        let posterURL = "http://img.omdbapi.com/?i=\(imdbID)&apikey=57288a3b&h=1000"
+        let posterNSURL = NSURL(string: "\(posterURL)")
+        
+        print(" \(index) Movie: \(imdbID) , Image: \(posterURL)")
+        
+        self.imgPoster?.setImageWithURL(posterNSURL, placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions.AllowInvalidSSLCertificates, usingActivityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+        
+        UIView.animateWithDuration(0.3, animations: {
+            self.vInstruction.alpha = 1
+        })
+        
+        self.lblYear.text = "-"
+        self.lblMovieTitle.text = "-"
+        self.lblDirector.text = "-"
+        self.lblLikes.text = "-"
+        
+        CommonUtils.sharedUtils.showProgress(self.view, label: "Please wait..")
+        let movieFullDetailURL = "http://www.omdbapi.com/"  //http:// www.omdbapi.com/?i=(*imdbID*)&plot=short&r=json
+        Alamofire.request(.GET, movieFullDetailURL, parameters: ["i": imdbID, "apikey":"57288a3b", "plot":"short", "r":"json"])
+            .responseJSON { response in
+                
+                debugPrint(response)
+                CommonUtils.sharedUtils.hideProgress()
+                
+                if let JSON = response.result.value as? [String:String] {
+                    print("Success with JSON: \(JSON)")
+                    
+                    if let Year = JSON["Year"] {
+                        self.lblYear.text = "\(Year)"
+                        self.lblYear.addTextSpacing(2)
+                    }
+                    if let Title = JSON["Title"] {
+                        self.lblMovieTitle.text = "\(Title)"
+                    }
+                    if let Director = JSON["Director"] {
+                        self.lblDirector.text = "Directed by \(Director)"
+                    }
+                    if let Likes = JSON["imdbVotes"] {
+                        self.lblLikes.text = "\(Likes) Likes"
+                    }
+                }
+        }
+    }
     
     func SaveSwipeEntry(forIndex: Int,Status: String)
     {
@@ -442,7 +512,7 @@ extension RecomendationVC: KolodaViewDelegate {
     
     func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
         let movieDescriptionViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MovieDescriptionViewController") as! MovieDescriptionViewController!
-        movieDescriptionViewController.movieDetail = ["imdbID": "\(movies[Int(index)])"]
+        movieDescriptionViewController.movieDetail = ["imdbID": "\(AppState.sharedInstance.My_Like_Recom_MovieID_top2000[Int(index)])"]
         self.navigationController?.pushViewController(movieDescriptionViewController, animated: true)
     }
     
