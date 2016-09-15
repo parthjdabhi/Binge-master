@@ -1200,6 +1200,7 @@
 				PROVISIONING_PROFILE = "66ae2d55-2e53-47e7-b78c-6fb0e3c89063";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1219,6 +1220,7 @@
 				PROVISIONING_PROFILE = "66ae2d55-2e53-47e7-b78c-6fb0e3c89063";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

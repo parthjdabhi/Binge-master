@@ -35,12 +35,14 @@ class FirebaseSignInViewController: UIViewController, UITextFieldDelegate {
         view.backgroundColor = UIColor(rgb: 0x282828)
         facebook.hidden = true
         login.layer.borderWidth = 0
+        
         emailField.setPlaceholderColor()
         passwordField.setPlaceholderColor()
-        
         emailField.setLeftMargin()
         passwordField.setLeftMargin()
         
+        emailField.delegate = self
+        passwordField.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -55,7 +57,17 @@ class FirebaseSignInViewController: UIViewController, UITextFieldDelegate {
         return UIStatusBarStyle.LightContent
     }
     
-    @IBAction func didTapSignIn(sender: AnyObject) {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == emailField {
+            passwordField.becomeFirstResponder()
+        } else if textField == passwordField {
+            self.view.endEditing(true)
+            self.didTapSignIn(nil)
+        }
+        return false
+    }
+    
+    @IBAction func didTapSignIn(sender: AnyObject?) {
         
         // Sign In with credentials.
         let email = emailField.text!
@@ -70,7 +82,7 @@ class FirebaseSignInViewController: UIViewController, UITextFieldDelegate {
                     CommonUtils.sharedUtils.hideProgress()
                 })
                 if let error = error {
-                    CommonUtils.sharedUtils.showAlert(self, title: "Error", message: error.localizedDescription)
+                    CommonUtils.sharedUtils.showAlert(self, title: "Error", message: "The username or password you have entered do not correspond with any of our accounts.")
                     print(error.localizedDescription)
                 }
                 else{

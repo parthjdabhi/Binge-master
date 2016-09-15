@@ -89,19 +89,35 @@ class TermsViewController: BaseViewController, UIPageViewControllerDelegate {
         print(firstNameInfo)
         print(lastNameInfo)
         print(userPicture)
-        
-        if emailInfo != "" && passwordInfo != "" {
+        if firstNameInfo == "" && firstNameInfo == "" {
+            CommonUtils.sharedUtils.showAlert(self, title: "Alert!", message: "Required your firstname & lastname.")
+            return
+        }
+//        else if emailInfo == "" {
+//            CommonUtils.sharedUtils.showAlert(self, title: "Alert!", message: "Please select the photo")
+//            return
+//        }
+        else if emailInfo == "" && passwordInfo == "" {
+            CommonUtils.sharedUtils.showAlert(self, title: "Alert!", message: "Required your email address and password.")
+            return
+        }
+        else if passwordInfo.characters.count < 6 {
+            CommonUtils.sharedUtils.showAlert(self, title: "Alert!", message: "Your password should be of atleast six character long.")
+            return
+        }
+        else
+        {
             CommonUtils.sharedUtils.showProgress(self.view, label: "Registering...")
             FIRAuth.auth()?.createUserWithEmail(emailInfo, password: passwordInfo, completion:  { (user, error) in
                 if error == nil
                 {
                     FIREmailPasswordAuthProvider.credentialWithEmail(emailInfo, password: passwordInfo)
                     self.ref.child("users").child(user!.uid).setValue(["userFirstName": firstNameInfo, "userLastName": lastNameInfo, "userGender": userSex, "userNationality": userOrigin, "userDOB": userDOB, "email": emailInfo])
-                    if userPicture == "" {
-                        CommonUtils.sharedUtils.showAlert(self, title: "Alert!", message: "Please select the photo")
-                        return
+                    
+                    if userPicture != "" {
+                        self.ref.child("users").child(user!.uid).child("image").setValue(userPicture)
                     }
-                    self.ref.child("users").child(user!.uid).child("image").setValue(userPicture)
+                    
                     CommonUtils.sharedUtils.hideProgress()
                     
                     self.performSegueWithIdentifier("segueMainScreen", sender: self)
@@ -119,11 +135,6 @@ class TermsViewController: BaseViewController, UIPageViewControllerDelegate {
                     })
                 }
             })
-        } else {
-            let alert = UIAlertController(title: "Error", message: "Enter email & password!", preferredStyle: .Alert)
-            let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            alert.addAction(action)
-            CommonUtils.sharedUtils.showAlert(self, title: "Alert!", message: "Failed uploading profile image")
         }
     }
     

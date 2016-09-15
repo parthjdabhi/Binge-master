@@ -56,6 +56,7 @@ class ProfilePictureViewController: BaseViewController, UIImagePickerControllerD
                                                 self.imagePickerController = UIImagePickerController()
                                                 self.imagePickerController.delegate = self
                                                 self.imagePickerController.sourceType = .Camera
+                                                self.imagePickerController.allowsEditing = true
                                                 self.presentViewController(self.imagePickerController,
                                                                            animated: true,
                                                                            completion: nil)
@@ -69,6 +70,7 @@ class ProfilePictureViewController: BaseViewController, UIImagePickerControllerD
                                             self.imagePickerController = UIImagePickerController()
                                             self.imagePickerController.delegate = self
                                             self.imagePickerController.sourceType = .PhotoLibrary
+                                            self.imagePickerController.allowsEditing = true
                                             self.presentViewController(self.imagePickerController,
                                                                        animated: true,
                                                                        completion: nil)
@@ -115,7 +117,10 @@ class ProfilePictureViewController: BaseViewController, UIImagePickerControllerD
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            profilePicture.contentMode = .ScaleAspectFit
+            picture.image = scaleImage(pickedImage, maxDimension: 300)
+        } else if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             profilePicture.contentMode = .ScaleAspectFit
             picture.image = scaleImage(pickedImage, maxDimension: 300)
         }

@@ -47,10 +47,12 @@ class GenderViewController: BaseViewController {
     
     @IBAction func maleButton(sender: AnyObject) {
         male.hidden = false
+        female.hidden = true
         TermsViewController.sex = genderArray[0]
     }
     
     @IBAction func femaleButton(sender: AnyObject) {
+        male.hidden = true
         female.hidden = false
         TermsViewController.sex = genderArray[1]
     }
@@ -65,8 +67,8 @@ class GenderViewController: BaseViewController {
             print("picker = \(picker)")
             self.nationality.text = ("\(index)")
             self.nationality.hidden = false
-            self.nationalityButton.hidden = true
-            //self.nationalityButton.setTitle("\(index)", forState: UIControlState.Normal)
+            //self.nationalityButton.hidden = true
+            self.nationalityButton.setTitle("", forState: UIControlState.Normal)
             TermsViewController.origin = self.nationality.text!
 
             self.goNextSelectorClosure?()

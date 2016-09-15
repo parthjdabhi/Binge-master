@@ -75,6 +75,12 @@ class MySlideMenuController : UIViewController {
         btnLogout.layer.borderWidth = 1
         btnLogout.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.2).CGColor
         
+        
+        self.lblName?.text = "asd asd asd asd"
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MySlideMenuController.MyProfile))
+        lblName?.addGestureRecognizer(tap)
+        lblName?.userInteractionEnabled = true
+        
         RefreshProfiledata()
         
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -96,6 +102,11 @@ class MySlideMenuController : UIViewController {
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent;
+    }
+    
+    func MyProfile() {
+        view.endEditing(true)
+        self.actionMyProfile(nil)
     }
     
     func RefreshProfiledata()
@@ -164,6 +175,9 @@ class MySlideMenuController : UIViewController {
                     
                     if watchedMovies.count > 0 {
                         self.lblWachCount?.text = "Watched Movies :  \(watchedMovies.count)"
+                        self.lblTimeWaste?.text = "Wasted  \(Int(Float(watchedMovies.count) * 2.5))  hours of life on watching movies"
+                    } else {
+                        self.lblTimeWaste?.text = "Wasted  0 hours of life on watching movies"
                     }
                     
                     let watchlistMovies = self.movieSwiped.filter({
@@ -218,7 +232,7 @@ class MySlideMenuController : UIViewController {
         self.performSegueWithIdentifier("segueMainScreen", sender: self)
     }
     
-    @IBAction func actionMyProfile(sender: AnyObject) {
+    @IBAction func actionMyProfile(sender: AnyObject?) {
         self.performSegueWithIdentifier("segueMyProfile", sender: self)
     }
     

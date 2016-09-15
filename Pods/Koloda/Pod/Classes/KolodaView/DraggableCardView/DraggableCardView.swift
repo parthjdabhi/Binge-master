@@ -298,7 +298,6 @@ public class DraggableCardView: UIView, UIGestureRecognizerDelegate {
         }
     }
     
-    
     private func updateOverlayWithFinishPercent(percent: CGFloat, direction: SwipeResultDirection?) {
         overlayView?.overlayState = direction
         overlayView?.overlayStrength = max(min(percent/swipePercentageMargin, 1.0), 0)
@@ -308,7 +307,12 @@ public class DraggableCardView: UIView, UIGestureRecognizerDelegate {
         let shouldSwipe = { direction in
             return self.delegate?.card(self, shouldSwipeInDirection: direction) ?? true
         }
-        if let dragDirection = dragDirection where shouldSwipe(dragDirection) && dragPercentage >= swipePercentageMargin && directions.contains(dragDirection) {
+        //Manage swipePercentageMargin ans Change dragPercentage for up direction
+        if let dragDirection = dragDirection
+            where shouldSwipe(dragDirection)
+                && dragPercentage >= swipePercentageMargin
+                && directions.contains(dragDirection)
+        {
             swipeAction(dragDirection)
         } else {
             resetViewPositionAndTransformations()

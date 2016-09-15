@@ -22,6 +22,8 @@ class DOBViewController: BaseViewController {
         ref = FIRDatabase.database().reference()
         user = FIRAuth.auth()?.currentUser
         
+        datePickView.maximumDate = NSDate()
+        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yy-MM-dd"
         

@@ -156,12 +156,14 @@ class MainScreenViewController: UIViewController {
         //accuracy_top2000
         dispatch_group_enter(globalGroup)
         ref.child("users").child(AppState.MyUserID()).child("accuracy_top2000").observeSingleEventOfType(.Value, withBlock: { snapshot in
+            
             CommonUtils.sharedUtils.hideProgress()
             AppState.sharedInstance.accu_All_top2000 = Dictionary<String,Int>()
             AppState.sharedInstance.accu_Like_top2000 = Dictionary<String,Int>()
             AppState.sharedInstance.accu_Dislike_top2000 = Dictionary<String,Int>()
             AppState.sharedInstance.accu_Watched_top2000 = Dictionary<String,Int>()
             AppState.sharedInstance.accu_Havnt_top2000 = Dictionary<String,Int>()
+            
             if snapshot.exists() {
                 print(snapshot.childrenCount)
                 let top2000 = snapshot.valueInExportFormat() as? NSDictionary
@@ -479,7 +481,6 @@ extension MainScreenViewController: KolodaViewDelegate {
         movieDescriptionViewController.movieDetail = movies[Int(index)] as? [String:String]
         self.navigationController?.pushViewController(movieDescriptionViewController, animated: true)
     }
-    
 
     
     func kolodaShouldApplyAppearAnimation(koloda: KolodaView) -> Bool {
@@ -505,6 +506,9 @@ extension MainScreenViewController: KolodaViewDelegate {
         return [.Left, .Right, .Up, .Down]
     }
     
+    func kolodaSwipeThresholdRatioMargin(koloda: KolodaView) -> CGFloat? {
+        return 0.4
+    }
     
     func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
         

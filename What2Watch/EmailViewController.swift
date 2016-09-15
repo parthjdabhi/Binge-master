@@ -59,7 +59,7 @@ class EmailViewController: BaseViewController, UITextFieldDelegate, UITextViewDe
         if textField == emailField {
             animateViewMoving(16)
         } else if textField == passwordField {
-            animateViewMoving(26)
+            animateViewMoving(88)
         }
     }
     
@@ -68,7 +68,7 @@ class EmailViewController: BaseViewController, UITextFieldDelegate, UITextViewDe
         if textField == emailField {
             animateViewMoving(16,up: false)
         } else if textField == passwordField {
-            animateViewMoving(50,up: false)
+            animateViewMoving(88,up: false)
         }
     }
     

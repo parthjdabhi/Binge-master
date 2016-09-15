@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/FirebaseSignInViewController.swift"
-            timestampString = "495195175.730715"
+            timestampString = "495540159.333919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "didTapSignIn(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MyProfileViewController.swift"
-            timestampString = "495211297.364969"
+            timestampString = "495550418.71927"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
             landmarkName = "MyProfileViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/TermsViewController.swift"
-            timestampString = "494566864.545071"
+            timestampString = "495542629.248852"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "getStartedButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/ProfilePictureViewController.swift"
-            timestampString = "495193940.096642"
+            timestampString = "495542629.248852"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "5">
             <Locations>
@@ -198,15 +198,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/TermsViewController.swift"
-            timestampString = "494566864.545071"
+            timestampString = "495544131.362138"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "getStartedButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -363,11 +363,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
-            timestampString = "495184203.118079"
+            timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "787"
-            endingLineNumber = "787"
+            startingLineNumber = "789"
+            endingLineNumber = "789"
             landmarkName = "MainScreenViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -379,11 +379,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
-            timestampString = "495184203.118079"
+            timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "803"
-            endingLineNumber = "803"
+            startingLineNumber = "805"
+            endingLineNumber = "805"
             landmarkName = "MainScreenViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -395,11 +395,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
-            timestampString = "495184203.118079"
+            timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "797"
-            endingLineNumber = "797"
+            startingLineNumber = "799"
+            endingLineNumber = "799"
             landmarkName = "MainScreenViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -491,11 +491,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
-            timestampString = "494431585.509124"
+            timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "refreshAccuracyCounts(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -507,11 +507,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
-            timestampString = "495202670.418072"
+            timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "377"
-            endingLineNumber = "377"
+            startingLineNumber = "379"
+            endingLineNumber = "379"
             landmarkName = "SaveSwipeEntry(_:Status:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -523,11 +523,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
-            timestampString = "495202670.418072"
+            timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "358"
-            endingLineNumber = "358"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
             landmarkName = "SaveSwipeEntry(_:Status:)"
             landmarkType = "5">
             <Locations>
@@ -571,11 +571,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
-            timestampString = "495202670.418072"
+            timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "377"
-            endingLineNumber = "377"
+            startingLineNumber = "379"
+            endingLineNumber = "379"
             landmarkName = "SaveSwipeEntry(_:Status:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -587,11 +587,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
-            timestampString = "494431585.509124"
+            timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "refreshAccuracyCounts(_:)"
             landmarkType = "5">
             <Locations>
@@ -635,11 +635,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
-            timestampString = "494431585.509124"
+            timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "refreshAccuracyCounts(_:)"
             landmarkType = "5">
             <Locations>
@@ -683,11 +683,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
-            timestampString = "495202670.418072"
+            timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "398"
-            endingLineNumber = "398"
+            startingLineNumber = "400"
+            endingLineNumber = "400"
             landmarkName = "SaveSwipeEntry(_:Status:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -699,11 +699,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
-            timestampString = "494431585.509124"
+            timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
             landmarkName = "getMoviewRecord(_:)"
             landmarkType = "5">
             <Locations>
@@ -747,11 +747,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
-            timestampString = "494431585.509124"
+            timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
+            startingLineNumber = "325"
+            endingLineNumber = "325"
             landmarkName = "getMoviewRecord(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -763,11 +763,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
-            timestampString = "495202670.418072"
+            timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "583"
-            endingLineNumber = "583"
+            startingLineNumber = "585"
+            endingLineNumber = "585"
             landmarkName = "filterDatawithAccuracy()"
             landmarkType = "5">
          </BreakpointContent>
@@ -795,11 +795,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
-            timestampString = "494431585.509124"
+            timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
             landmarkName = "getMoviewRecord(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -923,11 +923,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
-            timestampString = "495184203.118079"
+            timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "620"
-            endingLineNumber = "620"
+            startingLineNumber = "622"
+            endingLineNumber = "622"
             landmarkName = "filterDatawithAccuracy()"
             landmarkType = "5">
          </BreakpointContent>
@@ -939,11 +939,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/GenderViewController.swift"
-            timestampString = "495192352.267562"
+            timestampString = "495541193.614785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "selectNationalityButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -955,11 +955,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/ProfilePictureViewController.swift"
-            timestampString = "495211297.364969"
+            timestampString = "495542629.248852"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "backButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -971,11 +971,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/TutorialViewController.swift"
-            timestampString = "495193194.40234"
+            timestampString = "495541963.073417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "initViews()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1035,11 +1035,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/MyProfileViewController.swift"
-            timestampString = "495211297.364969"
+            timestampString = "495550418.71927"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "5">
             <Locations>
@@ -1051,11 +1051,11 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/MyProfileViewController.swift"
-                  timestampString = "495297736.470627"
+                  timestampString = "495550586.79381"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "202"
-                  endingLineNumber = "202"
+                  startingLineNumber = "205"
+                  endingLineNumber = "205"
                   offsetFromSymbolStart = "30">
                </Location>
                <Location
@@ -1066,11 +1066,11 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/MyProfileViewController.swift"
-                  timestampString = "495297736.470764"
+                  timestampString = "495550586.793965"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "202"
-                  endingLineNumber = "202"
+                  startingLineNumber = "205"
+                  endingLineNumber = "205"
                   offsetFromSymbolStart = "317">
                </Location>
             </Locations>
@@ -1099,11 +1099,11 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/RecomendationVC.swift"
-                  timestampString = "495297736.471647"
+                  timestampString = "495550586.79489"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "327"
-                  endingLineNumber = "327"
+                  startingLineNumber = "320"
+                  endingLineNumber = "320"
                   offsetFromSymbolStart = "19">
                </Location>
                <Location
@@ -1114,14 +1114,62 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/RecomendationVC.swift"
-                  timestampString = "495297736.471789"
+                  timestampString = "495550586.795044"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "328"
-                  endingLineNumber = "328"
+                  startingLineNumber = "321"
+                  endingLineNumber = "321"
                   offsetFromSymbolStart = "19">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "What2Watch/TermsViewController.swift"
+            timestampString = "495541353.436085"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "getStartedButton(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Koloda/Pod/Classes/KolodaView/DraggableCardView/DraggableCardView.swift"
+            timestampString = "495551347.874731"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "DraggableCardView"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Koloda/Pod/Classes/KolodaView/DraggableCardView/DraggableCardView.swift"
+            timestampString = "495551423.315894"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
+            landmarkName = "swipeMadeAction()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

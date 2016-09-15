@@ -29,6 +29,7 @@ class TutorialViewController: UIViewController {
         pageControl.addTarget(self, action: #selector(TutorialViewController.didChangePageControlValue), forControlEvents: .ValueChanged)
         pageControl.numberOfPages = 6
         self.scrollView.delegate = self
+        scrollView.showsHorizontalScrollIndicator = false
         //self.scrollView.contentSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width * 6, UIScreen.mainScreen().bounds.size.height)
         self.scrollView.contentSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width * 6, 1.0)
         self.initViews()

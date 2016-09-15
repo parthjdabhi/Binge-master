@@ -258,8 +258,8 @@ class RecomendationVC: UIViewController {
                             self.cardHolderView.reloadData()
                             
                         } else {
-                            
-                            let alertController = UIAlertController(title: "Swipe More", message: "You haven't swiped enough movies to generate a recommendation.", preferredStyle: UIAlertControllerStyle.Alert)
+                            self.lblMsgCentered?.text = "No Recommendations :("
+                            let alertController = UIAlertController(title: "Swipe More!", message: "Give our algorithms a little more data to work with, head back to the improve accuracy page and keep rating movies!", preferredStyle: UIAlertControllerStyle.Alert)
                             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (result : UIAlertAction) -> Void in
                                 
                                 let vc = self.storyboard?.instantiateViewControllerWithIdentifier("MainScreenViewController") as! MainScreenViewController!
@@ -269,8 +269,8 @@ class RecomendationVC: UIViewController {
                             self.presentViewController(alertController, animated: true, completion: nil)
                         }
                     } else {
-                        
-                        let alertController = UIAlertController(title: "Swipe More", message: "You haven't swiped enough movies to generate a recommendation.", preferredStyle: UIAlertControllerStyle.Alert)
+                        self.lblMsgCentered?.text = "No Recommendations :("
+                        let alertController = UIAlertController(title: "Swipe More!", message: "Give our algorithms a little more data to work with, head back to the improve accuracy page and keep rating movies!", preferredStyle: UIAlertControllerStyle.Alert)
                         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (result : UIAlertAction) -> Void in
                             
                             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("MainScreenViewController") as! MainScreenViewController!
@@ -281,8 +281,8 @@ class RecomendationVC: UIViewController {
                     }
                 }
             } else {
-                
-                let alertController = UIAlertController(title: "Swipe More", message: "You haven't swiped enough movies to generate a recommendation.", preferredStyle: UIAlertControllerStyle.Alert)
+                self.lblMsgCentered?.text = "No Recommendations :("
+                let alertController = UIAlertController(title: "Swipe More!", message: "Give our algorithms a little more data to work with, head back to the improve accuracy page and keep rating movies!", preferredStyle: UIAlertControllerStyle.Alert)
                 let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (result : UIAlertAction) -> Void in
                     
                     let vc = self.storyboard?.instantiateViewControllerWithIdentifier("MainScreenViewController") as! MainScreenViewController!

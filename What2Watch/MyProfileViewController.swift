@@ -49,7 +49,8 @@ class MyProfileViewController: UIViewController, UICollectionViewDelegate, UICol
         
         self.collectionView.showsHorizontalScrollIndicator = false
         let layout = self.collectionView.collectionViewLayout as! PDCarouselFlowLayout
-        layout.spacingMode = PDCarouselFlowLayoutSpacingMode.overlap(visibleOffset: 100)
+        layout.spacingMode = PDCarouselFlowLayoutSpacingMode.fixed(spacing: -84)
+        //layout.spacingMode = PDCarouselFlowLayoutSpacingMode.overlap(visibleOffset: 150)
         layout.scrollDirection = .Horizontal
         
         imgProfile.layer.cornerRadius = max(imgProfile.frame.size.width, imgProfile.frame.size.height) / 2
@@ -148,6 +149,7 @@ class MyProfileViewController: UIViewController, UICollectionViewDelegate, UICol
                                                 self.imagePickerController = UIImagePickerController()
                                                 self.imagePickerController.delegate = self
                                                 self.imagePickerController.sourceType = .Camera
+                                                self.imagePickerController.allowsEditing = true
                                                 self.presentViewController(self.imagePickerController,
                                                                            animated: true,
                                                                            completion: nil)
@@ -160,6 +162,7 @@ class MyProfileViewController: UIViewController, UICollectionViewDelegate, UICol
                                             self.imagePickerController = UIImagePickerController()
                                             self.imagePickerController.delegate = self
                                             self.imagePickerController.sourceType = .PhotoLibrary
+                                            self.imagePickerController.allowsEditing = true
                                             self.presentViewController(self.imagePickerController,
                                                                        animated: true,
                                                                        completion: nil)
@@ -199,7 +202,7 @@ class MyProfileViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage
         {
             imgProfile.image = scaleImage(pickedImage, maxDimension: 300)
             AppState.sharedInstance.myProfile = imgProfile.image

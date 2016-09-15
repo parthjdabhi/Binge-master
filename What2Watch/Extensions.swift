@@ -96,8 +96,9 @@ extension UITextField {
         self.rightView = paddingRight
         self.rightViewMode = UITextFieldViewMode .Always
     }
-    public func setPlaceholderColor(textColor:UIColor = UIColor.whiteColor())
+    public func setPlaceholderColor(textColor:UIColor = UIColor.init(white: 0.8, alpha: 0.8))
     {
+        //UIColor.whiteColor()
         self.attributedPlaceholder = NSAttributedString(string:self.placeholder ?? "",attributes:[NSForegroundColorAttributeName: textColor])
         //,NSFontAttributeName:UIFont.fontNamesForFamilyName("Arial")
     }
