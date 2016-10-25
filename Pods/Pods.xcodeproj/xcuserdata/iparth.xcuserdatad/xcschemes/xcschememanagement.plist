@@ -94,6 +94,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SWRevealViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -137,11 +142,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>168E65A3DAD0358584EEF35382A26649</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
 		<dict>
 			<key>primary</key>
@@ -152,22 +152,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2D6BDDA3CA1AA824E948991E2EF4FBFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>30D7FCF8072F5D59AE1C98D94F9A6EC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>33CBF753A251037B954B9B88D9E2AC31</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>45935B91DF0442390E2CA6DEEF68AE99</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>534777E8D8F405E63F0D47126BB8CB7B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -202,12 +197,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A90E6B7E32220402DAB736EAB0F22AA6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AB4C5E81EB050A74C800D83B0E4E3975</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>AF09E4BD409E7AC460262C21A1A1ECBE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C45290004E0078130C91A71711094467</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C6EDAA1F49B8FFC6D664EA45BAB5A7D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -222,7 +232,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E08664DCE478DAFE952EC126706FFB3E</key>
+		<key>E3856E7970A736F737288F36435FD1A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

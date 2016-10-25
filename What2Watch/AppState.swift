@@ -51,3 +51,15 @@ class AppState: NSObject {
 
 let globalGroup = dispatch_group_create();
 let queue = NSOperationQueue()
+
+
+let myUserID = {
+    //return LoggedInUser?.uid
+    return FIRAuth.auth()?.currentUser?.uid
+}()
+
+//Globals
+var filteredUser:[Dictionary<String,AnyObject>] = []
+var selectedUsers:[Dictionary<String,AnyObject>] = []
+
+

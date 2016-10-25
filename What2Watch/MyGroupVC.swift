@@ -64,6 +64,11 @@ class MyGroupVC: UIViewController, UITabBarDelegate, UITableViewDataSource {
 
     // MARK: - VC Actions
     
+    @IBAction func actionCreateGroup(sender: AnyObject) {
+        let createGroup = self.storyboard?.instantiateViewControllerWithIdentifier("CreateGroupVC") as! CreateGroupVC
+        self.navigationController?.pushViewController(createGroup, animated: true)
+    }
+    
     
     // MARK: - Delegates & DataSource
     

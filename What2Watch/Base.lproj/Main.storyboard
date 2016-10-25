@@ -3304,12 +3304,22 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMd-hF-EFj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+                                            <connections>
+                                                <action selector="actionCreateGroup:" destination="ADX-8X-CMV" eventType="touchUpInside" id="O0e-jI-PTL"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="MMd-hF-EFj" secondAttribute="bottom" id="CW9-gq-mWx"/>
+                                        <constraint firstAttribute="trailing" secondItem="MMd-hF-EFj" secondAttribute="trailing" id="M7a-Eo-EjF"/>
                                         <constraint firstItem="hf0-cc-a3r" firstAttribute="centerY" secondItem="RkW-gX-sMI" secondAttribute="centerY" id="Wtr-EN-yeH"/>
                                         <constraint firstItem="hf0-cc-a3r" firstAttribute="leading" secondItem="RkW-gX-sMI" secondAttribute="leading" constant="8" id="YJN-y2-eHY"/>
                                         <constraint firstItem="T6U-mF-Xp4" firstAttribute="leading" secondItem="hf0-cc-a3r" secondAttribute="trailing" constant="8" id="ppW-jy-UMA"/>
+                                        <constraint firstItem="MMd-hF-EFj" firstAttribute="top" secondItem="RkW-gX-sMI" secondAttribute="top" id="r1v-Nb-cQO"/>
+                                        <constraint firstItem="MMd-hF-EFj" firstAttribute="leading" secondItem="RkW-gX-sMI" secondAttribute="leading" id="ttz-Xr-LTO"/>
                                         <constraint firstItem="T6U-mF-Xp4" firstAttribute="centerY" secondItem="hf0-cc-a3r" secondAttribute="centerY" id="wGM-6Z-r1Y"/>
                                     </constraints>
                                 </view>
@@ -3464,10 +3474,10 @@
             </objects>
             <point key="canvasLocation" x="-1039.5" y="-573.5"/>
         </scene>
-        <!--Craete GroupVC-->
+        <!--Create GroupVC-->
         <scene sceneID="0Q0-eJ-2XX">
             <objects>
-                <viewController storyboardIdentifier="CraeteGroupVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o3U-IR-MIg" customClass="CraeteGroupVC" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateGroupVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o3U-IR-MIg" customClass="CreateGroupVC" customModule="What2Watch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="61l-Qt-7UG"/>
                         <viewControllerLayoutGuide type="bottom" id="nh1-4b-b17"/>
@@ -3553,7 +3563,7 @@
                                     <action selector="actionCreateGroup:" destination="o3U-IR-MIg" eventType="touchUpInside" id="RpZ-ap-ACq"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Group Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UUz-bc-3mK">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Group Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UUz-bc-3mK">
                                 <rect key="frame" x="84" y="230" width="207" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="HeF-6E-SGF"/>
@@ -3567,9 +3577,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh0-JS-LUY">
-                                <rect key="frame" x="64" y="328" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh0-JS-LUY">
+                                <rect key="frame" x="158" y="499" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Eh0-JS-LUY" secondAttribute="height" multiplier="1:1" id="d9X-md-SbE"/>
+                                    <constraint firstAttribute="width" constant="60" id="yp8-KJ-g94"/>
+                                </constraints>
+                                <state key="normal" image="addPlaceholder"/>
                                 <connections>
                                     <action selector="actionAddMember:" destination="o3U-IR-MIg" eventType="touchUpInside" id="Mtp-Wa-xRK"/>
                                 </connections>
@@ -3587,8 +3601,10 @@
                             <constraint firstItem="nh1-4b-b17" firstAttribute="top" secondItem="rdQ-tk-tTw" secondAttribute="bottom" id="E1x-FJ-3zM"/>
                             <constraint firstAttribute="trailing" secondItem="rdQ-tk-tTw" secondAttribute="trailing" id="KQK-EU-V9n"/>
                             <constraint firstItem="UUz-bc-3mK" firstAttribute="centerX" secondItem="iSs-xY-Mnd" secondAttribute="centerX" id="KjD-PM-qeY"/>
+                            <constraint firstItem="Eh0-JS-LUY" firstAttribute="centerX" secondItem="iSs-xY-Mnd" secondAttribute="centerX" id="MEP-f1-INC"/>
                             <constraint firstItem="UUz-bc-3mK" firstAttribute="top" secondItem="gVe-aw-eCs" secondAttribute="bottom" constant="17" id="Pr1-Nx-BrL"/>
                             <constraint firstItem="RCs-8U-DHg" firstAttribute="centerY" secondItem="z5j-rZ-YBj" secondAttribute="centerY" id="WmG-1Q-slg"/>
+                            <constraint firstItem="C9N-sC-UYT" firstAttribute="top" secondItem="Eh0-JS-LUY" secondAttribute="bottom" constant="20" id="ZLE-N9-3s9"/>
                             <constraint firstItem="KfY-z4-9id" firstAttribute="centerX" secondItem="iSs-xY-Mnd" secondAttribute="centerX" id="ZUS-oE-wbf"/>
                             <constraint firstItem="aOy-mo-Aow" firstAttribute="centerX" secondItem="0Js-Au-5QX" secondAttribute="centerX" id="aQd-LP-Krc"/>
                             <constraint firstItem="gVe-aw-eCs" firstAttribute="centerY" secondItem="KfY-z4-9id" secondAttribute="centerY" id="i4q-8Q-2aD"/>
@@ -3605,10 +3621,8 @@
                     <navigationItem key="navigationItem" id="uMs-F4-UY2"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="actionGoToBack" destination="z5j-rZ-YBj" id="mIf-hC-F7z"/>
                         <outlet property="btnBack" destination="z5j-rZ-YBj" id="H1b-cw-XZb"/>
                         <outlet property="btnCreateGroup" destination="rdQ-tk-tTw" id="uw9-qG-Qbe"/>
-                        <outlet property="btnMenu" destination="z5j-rZ-YBj" id="qX8-QD-gVn"/>
                         <outlet property="btnaddMember" destination="Eh0-JS-LUY" id="PvS-mb-s9a"/>
                         <outlet property="imgGroup" destination="KfY-z4-9id" id="7Le-35-bOV"/>
                         <outlet property="lblMembersCount" destination="C9N-sC-UYT" id="UaB-hZ-dWY"/>

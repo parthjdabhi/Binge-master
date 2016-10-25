@@ -20,7 +20,8 @@
 		5E0082901D565FCB009DED1E /* setting1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E00828E1D565FCA009DED1E /* setting1.png */; };
 		5E0082911D565FCB009DED1E /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E00828F1D565FCB009DED1E /* user.png */; };
 		5E146FD31DBF90150002314F /* GroupPeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E146FD21DBF90150002314F /* GroupPeopleCollectionViewCell.swift */; };
-		5E146FD51DBF956A0002314F /* CraeteGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E146FD41DBF956A0002314F /* CraeteGroupVC.swift */; };
+		5E146FD51DBF956A0002314F /* CreateGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E146FD41DBF956A0002314F /* CreateGroupVC.swift */; };
+		5E223CE51DBFE1BC0066F78E /* searchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E223CE41DBFE1BC0066F78E /* searchController.swift */; };
 		5E3649261DBF588B00E7E09F /* MyGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3649251DBF588B00E7E09F /* MyGroupVC.swift */; };
 		5E3649281DBF58D100E7E09F /* MyGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3649271DBF58D100E7E09F /* MyGroupTableViewCell.swift */; };
 		5E36492A1DBF5AA000E7E09F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3649291DBF5AA000E7E09F /* Helpers.swift */; };
@@ -185,7 +186,8 @@
 		5E00828E1D565FCA009DED1E /* setting1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting1.png; sourceTree = "<group>"; };
 		5E00828F1D565FCB009DED1E /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		5E146FD21DBF90150002314F /* GroupPeopleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPeopleCollectionViewCell.swift; sourceTree = "<group>"; };
-		5E146FD41DBF956A0002314F /* CraeteGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CraeteGroupVC.swift; sourceTree = "<group>"; };
+		5E146FD41DBF956A0002314F /* CreateGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupVC.swift; sourceTree = "<group>"; };
+		5E223CE41DBFE1BC0066F78E /* searchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchController.swift; sourceTree = "<group>"; };
 		5E3649251DBF588B00E7E09F /* MyGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupVC.swift; sourceTree = "<group>"; };
 		5E3649271DBF58D100E7E09F /* MyGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupTableViewCell.swift; sourceTree = "<group>"; };
 		5E3649291DBF5AA000E7E09F /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -393,7 +395,7 @@
 			children = (
 				5E3649291DBF5AA000E7E09F /* Helpers.swift */,
 				5E3649251DBF588B00E7E09F /* MyGroupVC.swift */,
-				5E146FD41DBF956A0002314F /* CraeteGroupVC.swift */,
+				5E146FD41DBF956A0002314F /* CreateGroupVC.swift */,
 				5E3649271DBF58D100E7E09F /* MyGroupTableViewCell.swift */,
 				5E146FD21DBF90150002314F /* GroupPeopleCollectionViewCell.swift */,
 			);
@@ -436,6 +438,7 @@
 		5ECD1B171D62EC4F00C301DF /* New Screen */ = {
 			isa = PBXGroup;
 			children = (
+				5E223CE41DBFE1BC0066F78E /* searchController.swift */,
 				5E0082691D55F9A6009DED1E /* MySlideMenuController.swift */,
 				5EAAB95B1D780512009199A5 /* Menu Page */,
 				5EAAB95A1D7804F2009199A5 /* My Profile  */,
@@ -1059,6 +1062,7 @@
 				5ECD10111D672CB900EC54A8 /* CustomOverlayView.swift in Sources */,
 				DA21C46B1D3945C000E6843E /* Constants.swift in Sources */,
 				5ECD1B301D63033600C301DF /* SliderCollectionViewCell.swift in Sources */,
+				5E223CE51DBFE1BC0066F78E /* searchController.swift in Sources */,
 				5E146FD31DBF90150002314F /* GroupPeopleCollectionViewCell.swift in Sources */,
 				DA21C46C1D3945C000E6843E /* AppState.swift in Sources */,
 				5E3649281DBF58D100E7E09F /* MyGroupTableViewCell.swift in Sources */,
@@ -1066,7 +1070,7 @@
 				5E00826E1D55F9A6009DED1E /* HelpVC.swift in Sources */,
 				DA21C46E1D3945C000E6843E /* AEXML.swift in Sources */,
 				DAA481CF1D4A6CF900CD962B /* SignUpViewController.swift in Sources */,
-				5E146FD51DBF956A0002314F /* CraeteGroupVC.swift in Sources */,
+				5E146FD51DBF956A0002314F /* CreateGroupVC.swift in Sources */,
 				DA21C46D1D3945C000E6843E /* Extensions.swift in Sources */,
 				5ECD10101D672CB900EC54A8 /* CustomKolodaView.swift in Sources */,
 				DA21C4291D39409400E6843E /* AppDelegate.swift in Sources */,

@@ -16,10 +16,13 @@ target 'What2Watch' do
     pod 'OAuthSwift', '~> 0.5.0'
     pod 'SDWebImage', '~>3.8'
     pod 'ActionSheetPicker-3.0', '~> 2.2.0'
+    
+    pod 'SVProgressHUD', '~> 2.0'
     # pod 'SlideMenuControllerSwift'
     pod 'SWRevealViewController', '~> 2.3'
     pod 'UIActivityIndicator-for-SDWebImage'
     pod 'IQKeyboardManagerSwift'
+    
     # Pods for What2Watch
     pod 'Alamofire', '~> 3.4'
     pod 'Koloda', '~> 3.1'
