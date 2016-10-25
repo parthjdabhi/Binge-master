@@ -13,7 +13,7 @@ class MyGroupTableViewCell: UITableViewCell {
     @IBOutlet weak var lblGroupName: UILabel!
     @IBOutlet weak var lblPeopleCount: UILabel!
     @IBOutlet weak var imgGroup: UIImageView!
-    @IBOutlet private weak var cvPeople: UICollectionView!
+    @IBOutlet weak var cvPeople: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -59,6 +59,7 @@ let myUserID = {
 }()
 
 //Globals
+var myGroups:[Dictionary<String,AnyObject>] = []
 var filteredUser:[Dictionary<String,AnyObject>] = []
 var selectedUsers:[Dictionary<String,AnyObject>] = []
 

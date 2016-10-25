@@ -109,8 +109,8 @@ class CreateGroupVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
                       onCompletion: { (downloadURL, imagePath) in
                         print("downloadURL : ",downloadURL)
                         print("imagePath : ",imagePath)
-                        data["imagePath"] = imagePath
-                        self.ref.child("Group").childByAutoId().updateChildValues(data)
+                        data["imageUrl"] = downloadURL
+                        self.ref.child("groups").childByAutoId().updateChildValues(data)
                         SVProgressHUD.showSuccessWithStatus("Group created successfully")
                         self.navigationController?.popViewControllerAnimated(true)
                         //let dictData = ["imageUrl": downloadURL, "imagePath": imagePath]

@@ -10,6 +10,7 @@ import UIKit
 
 import Firebase
 import SDWebImage
+import SVProgressHUD
 import SWRevealViewController
 import UIActivityIndicator_for_SDWebImage
 
@@ -23,7 +24,7 @@ class MyGroupVC: UIViewController, UITabBarDelegate, UITableViewDataSource {
     @IBOutlet var tblGroupList: UITableView!
     
     // MARK: - VC Properties
-    let model = generateRandomData()
+    //let model = generateRandomData()
     var storedOffsets = [Int: CGFloat]()
     
     var ref:FIRDatabaseReference!
@@ -44,6 +45,10 @@ class MyGroupVC: UIViewController, UITabBarDelegate, UITableViewDataSource {
         }
         
         tblGroupList.rowHeight = 88
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        getGroups()
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,10 +75,84 @@ class MyGroupVC: UIViewController, UITabBarDelegate, UITableViewDataSource {
     }
     
     
+    // Perform the search.
+    private func getGroups(showLoader:Bool = true)
+    {
+        if showLoader == true {
+            SVProgressHUD.showWithStatus("Loading..")
+        }
+        //        barSearchResults = bars.filter({ (bar) -> Bool in
+        //            if let name = bar["venueName"] as? String {
+        //                return (name.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil) != nil) ? true : false
+        //            }
+        //            return false
+        //        })
+        //        print(barSearchResults.count)
+        //        searchResultController.reloadDataWithArray(barSearchResults)
+        
+        //        if isRefreshingData == true {
+        //            return
+        //        }
+        
+        //isRefreshingData = true
+        let myGroup = dispatch_group_create()
+        
+        dispatch_group_enter(myGroup)
+        
+        
+        SVProgressHUD.showWithStatus("Loading..")
+        FIRDatabase.database().reference().child("groups").observeSingleEventOfType(.Value, withBlock: { snapshot in
+            
+            myGroups.removeAll()
+            
+            print("\(NSDate().timeIntervalSince1970) -- \(snapshot.childrenCount)")
+            //self.tblGroups.reloadData()
+            for child in snapshot.children {
+                
+                var placeDict = Dictionary<String,AnyObject>()
+                let childDict = child.valueInExportFormat() as! NSDictionary
+                //print(childDict)
+                
+                let snap = child as! FIRDataSnapshot
+                //let jsonDic = NSJSONSerialization.JSONObjectWithData(childDict, options: NSJSONReadingOptions.MutableContainers, error: &error) as Dictionary<String, AnyObject>;
+                for key : AnyObject in childDict.allKeys {
+                    let stringKey = key as! String
+                    if let keyValue = childDict.valueForKey(stringKey) as? String {
+                        placeDict[stringKey] = keyValue
+                    } else if let keyValue = childDict.valueForKey(stringKey) as? Double {
+                        placeDict[stringKey] = "\(keyValue)"
+                    }
+                    else if let keyValue = childDict.valueForKey(stringKey) as? Dictionary<String,AnyObject> {
+                        placeDict[stringKey] = keyValue
+                    }
+                    else if let keyValue = childDict.valueForKey(stringKey) as? NSDictionary {
+                        placeDict[stringKey] = keyValue
+                    }
+                    
+                }
+                placeDict["key"] = child.key
+                
+                myGroups.append(placeDict)
+                //print(placeDict)
+            }
+            dispatch_group_leave(myGroup)
+        })
+        dispatch_group_notify(myGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+            dispatch_async(dispatch_get_main_queue()) {
+                // update UI
+                SVProgressHUD.dismiss()
+                //self.isRefreshingData = false
+                
+                print(myGroups.count)
+                self.tblGroupList.reloadData()
+            }
+        }
+    }
+    
     // MARK: - Delegates & DataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.count
+        return myGroups.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -82,6 +161,11 @@ class MyGroupVC: UIViewController, UITabBarDelegate, UITableViewDataSource {
         
         cell.imgGroup?.setCornerRadious(cell.imgGroup.frame.width/2)
         cell.imgGroup?.setBorder(1, color: UIColor.lightGrayColor())
+        cell.imgGroup?.setImageWithURL(NSURL(string: (myGroups[indexPath.row]["imageUrl"] as? String ?? "")), placeholderImage: UIImage(named: "user.png"), usingActivityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        
+        cell.lblGroupName.text = "\((myGroups[indexPath.row]["members"] as? NSDictionary)?.count ?? 0) People"
+        
+        cell.cvPeople?.reloadData()
         
         return cell
     }
@@ -109,7 +193,7 @@ class MyGroupVC: UIViewController, UITabBarDelegate, UITableViewDataSource {
 
 extension MyGroupVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model[collectionView.tag].count
+        return (myGroups[collectionView.tag]["members"] as? NSDictionary)?.count ?? 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

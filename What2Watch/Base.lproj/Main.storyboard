@@ -434,7 +434,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcY-Vz-kOv" customClass="CustomKolodaView" customModule="What2Watch">
-                                <rect key="frame" x="0.0" y="74" width="375" height="593"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_Instruction" translatesAutoresizingMaskIntoConstraints="NO" id="EXL-GV-0VW">
@@ -448,7 +448,7 @@
                             <constraint firstItem="qI0-92-Odt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3tA-If-EdX"/>
                             <constraint firstItem="EXL-GV-0VW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="70v-O7-VWA"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5Y7-L0-aaD" secondAttribute="bottom" id="9Ty-au-5d1"/>
-                            <constraint firstItem="XcY-Vz-kOv" firstAttribute="top" secondItem="Uf7-hj-vbX" secondAttribute="bottom" constant="20" id="Acw-AM-9xB"/>
+                            <constraint firstItem="XcY-Vz-kOv" firstAttribute="top" secondItem="Uf7-hj-vbX" secondAttribute="bottom" constant="16" id="Acw-AM-9xB"/>
                             <constraint firstItem="clw-XL-pva" firstAttribute="centerY" secondItem="eyC-QN-dkK" secondAttribute="centerY" id="CWo-vb-18e"/>
                             <constraint firstItem="qI0-92-Odt" firstAttribute="leading" secondItem="eyC-QN-dkK" secondAttribute="trailing" constant="-52" id="Fhe-XZ-1Y3"/>
                             <constraint firstItem="5Y7-L0-aaD" firstAttribute="top" secondItem="qI0-92-Odt" secondAttribute="bottom" constant="-1" id="Hc0-AA-NRm"/>
