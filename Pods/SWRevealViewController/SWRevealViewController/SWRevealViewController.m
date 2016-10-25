@@ -46,7 +46,6 @@ static CGFloat statusBarAdjustment( UIView* view )
     return adjustment;
 }
 
-
 #pragma mark - SWRevealView Class
 
 @interface SWRevealView: UIView

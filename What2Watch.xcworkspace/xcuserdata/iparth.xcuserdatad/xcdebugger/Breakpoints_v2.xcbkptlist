@@ -1051,7 +1051,7 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/MyProfileViewController.swift"
-                  timestampString = "495550586.79381"
+                  timestampString = "499080609.036064"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "205"
@@ -1066,7 +1066,7 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/MyProfileViewController.swift"
-                  timestampString = "495550586.793965"
+                  timestampString = "499080609.03622"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "205"
@@ -1099,7 +1099,7 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/RecomendationVC.swift"
-                  timestampString = "495550586.79489"
+                  timestampString = "499080609.037776"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "320"
@@ -1114,7 +1114,7 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/RecomendationVC.swift"
-                  timestampString = "495550586.795044"
+                  timestampString = "499080609.037936"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "321"
@@ -1154,6 +1154,38 @@
             endingLineNumber = "70"
             landmarkName = "DraggableCardView"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Koloda.DraggableCardView.frame.didset : __C.CGRect"
+                  moduleName = "Koloda"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/Pods/Koloda/Pod/Classes/KolodaView/DraggableCardView/DraggableCardView.swift"
+                  timestampString = "499080609.040057"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "61">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Koloda.DraggableCardView.frame.didset : __C.CGRect"
+                  moduleName = "Koloda"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/Pods/Koloda/Pod/Classes/KolodaView/DraggableCardView/DraggableCardView.swift"
+                  timestampString = "499080609.040279"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "336">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1169,6 +1201,54 @@
             startingLineNumber = "311"
             endingLineNumber = "311"
             landmarkName = "swipeMadeAction()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Koloda.DraggableCardView.(swipeMadeAction in _20584BE9AC6BB8905E3A676B81A88A38) () -&gt; ()"
+                  moduleName = "Koloda"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/Pods/Koloda/Pod/Classes/KolodaView/DraggableCardView/DraggableCardView.swift"
+                  timestampString = "499080609.041335"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "311"
+                  endingLineNumber = "311"
+                  offsetFromSymbolStart = "81">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Koloda.DraggableCardView.(swipeMadeAction in _20584BE9AC6BB8905E3A676B81A88A38) () -&gt; ()"
+                  moduleName = "Koloda"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/Pods/Koloda/Pod/Classes/KolodaView/DraggableCardView/DraggableCardView.swift"
+                  timestampString = "499080609.041539"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "311"
+                  endingLineNumber = "311"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "What2Watch/Extensions.swift"
+            timestampString = "496056095.620566"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "shuffle()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
