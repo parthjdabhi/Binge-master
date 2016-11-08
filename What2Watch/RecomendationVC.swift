@@ -53,6 +53,10 @@ class RecomendationVC: UIViewController {
     
     var ref = FIRDatabase.database().reference()
     
+    //Filter Reco Movie
+    var Rec_movies_seen:Array<String> = []
+    var Rec_movies_seen1:Array<String> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -246,9 +250,32 @@ class RecomendationVC: UIViewController {
                             }
                         }
                         
-                        
-                        //shuffel position in array and show random movie as recommendation
+                        // shuffel position in array and show random movie as recommendation
                         AppState.sharedInstance.My_Like_Recom_MovieID_top2000.shuffleInPlace()
+                        
+                        print("AppState.sharedInstance.My_Like_Recom_MovieID_top2000",AppState.sharedInstance.My_Like_Recom_MovieID_top2000)
+                        
+                        //var swipedRecomm:Array<String> = []
+                        self.Rec_movies_seen = []
+                        
+                        // Previously seen Reco Movies __ after filter attach to last
+                        if let Rec_movies_seen_saved = NSUserDefaults.standardUserDefaults().objectForKey("Rec_movies_seen") as? [String] {
+                            self.Rec_movies_seen = Rec_movies_seen_saved
+                            print("Rec_movies_seen_saved founds - Count \(Rec_movies_seen_saved.count) ---- \(Rec_movies_seen_saved)")
+                            
+                            //Rec_movies_seen.append(AppState.sharedInstance.My_Like_Recom_MovieID_top2000[forIndex])
+                            //NSUserDefaults.standardUserDefaults().setObject(Rec_movies_seen_saved, forKey: "Rec_movies_seen")
+                        }
+                        
+                        for swipedMovie in self.Rec_movies_seen {
+                            if AppState.sharedInstance.My_Like_Recom_MovieID_top2000.contains(swipedMovie) {
+                                if let indexToRemove = AppState.sharedInstance.My_Like_Recom_MovieID_top2000.indexOf(swipedMovie) {
+                                    AppState.sharedInstance.My_Like_Recom_MovieID_top2000.removeAtIndex(indexToRemove)
+                                    AppState.sharedInstance.My_Like_Recom_MovieID_top2000.append(swipedMovie)
+                                }
+                            }
+                        }
+                        print("AppState.sharedInstance.My_Like_Recom_MovieID_top2000 swipedMovie",AppState.sharedInstance.My_Like_Recom_MovieID_top2000)
                         
                         if AppState.sharedInstance.My_Like_Recom_MovieID_top2000.count > 0 {
                             print("\n\nGot \(AppState.sharedInstance.My_Like_Recom_MovieID_top2000) Recommendation movie\n\n")
@@ -388,6 +415,19 @@ class RecomendationVC: UIViewController {
         if forIndex >= AppState.sharedInstance.My_Like_Recom_MovieID_top2000.count {
             return
         }
+        
+        //Saved Seen recommendation in userDefaults
+        if let Rec_movies_seen_saved = NSUserDefaults.standardUserDefaults().objectForKey("Rec_movies_seen") as? [String] {
+            Rec_movies_seen = Rec_movies_seen_saved
+            Rec_movies_seen.append(AppState.sharedInstance.My_Like_Recom_MovieID_top2000[forIndex])
+            NSUserDefaults.standardUserDefaults().setObject(Rec_movies_seen, forKey: "Rec_movies_seen")
+        } else {
+            Rec_movies_seen.append(AppState.sharedInstance.My_Like_Recom_MovieID_top2000[forIndex])
+            NSUserDefaults.standardUserDefaults().setObject(Rec_movies_seen, forKey: "Rec_movies_seen")
+        }
+        
+        NSUserDefaults.standardUserDefaults().synchronize()
+        print("Rec_movies_seen -- ", Rec_movies_seen)
         
 //        var Movie =  AppState.sharedInstance.My_Like_Recom_MovieID_top2000[forIndex]
 //        Movie["status"] = Status

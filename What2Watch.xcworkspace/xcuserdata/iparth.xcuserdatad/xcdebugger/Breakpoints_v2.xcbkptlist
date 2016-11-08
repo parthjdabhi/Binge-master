@@ -811,11 +811,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "495301261.32703"
+            timestampString = "500302910.388058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -827,11 +827,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "495301261.32703"
+            timestampString = "500302910.388058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -843,11 +843,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "495301261.32703"
+            timestampString = "500302910.388058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -859,11 +859,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "495301261.32703"
+            timestampString = "500302910.388058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -875,11 +875,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "495301261.32703"
+            timestampString = "500302910.388058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -891,11 +891,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "495301261.32703"
+            timestampString = "500302910.388058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -907,11 +907,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "495301261.32703"
+            timestampString = "500302910.388058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1051,7 +1051,7 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/MyProfileViewController.swift"
-                  timestampString = "499120276.621251"
+                  timestampString = "500303740.586397"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "205"
@@ -1066,7 +1066,7 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/MyProfileViewController.swift"
-                  timestampString = "499120276.621402"
+                  timestampString = "500303740.586676"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "205"
@@ -1083,11 +1083,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "495301261.32703"
+            timestampString = "500304475.515846"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "320"
-            endingLineNumber = "320"
+            startingLineNumber = "347"
+            endingLineNumber = "347"
             landmarkName = "imageTapped(_:)"
             landmarkType = "5">
             <Locations>
@@ -1099,11 +1099,11 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/RecomendationVC.swift"
-                  timestampString = "499120276.622638"
+                  timestampString = "500303740.589048"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "320"
-                  endingLineNumber = "320"
+                  startingLineNumber = "334"
+                  endingLineNumber = "334"
                   offsetFromSymbolStart = "19">
                </Location>
                <Location
@@ -1114,11 +1114,11 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/RecomendationVC.swift"
-                  timestampString = "499120276.622794"
+                  timestampString = "500303740.589304"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "321"
-                  endingLineNumber = "321"
+                  startingLineNumber = "335"
+                  endingLineNumber = "335"
                   offsetFromSymbolStart = "19">
                </Location>
             </Locations>
@@ -1163,7 +1163,7 @@
                   moduleName = "Koloda"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/Pods/Koloda/Pod/Classes/KolodaView/DraggableCardView/DraggableCardView.swift"
-                  timestampString = "499120276.62446"
+                  timestampString = "500303740.591807"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "70"
@@ -1178,7 +1178,7 @@
                   moduleName = "Koloda"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/Pods/Koloda/Pod/Classes/KolodaView/DraggableCardView/DraggableCardView.swift"
-                  timestampString = "499120276.6246"
+                  timestampString = "500303740.591971"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "70"
@@ -1211,7 +1211,7 @@
                   moduleName = "Koloda"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/Pods/Koloda/Pod/Classes/KolodaView/DraggableCardView/DraggableCardView.swift"
-                  timestampString = "499120276.625581"
+                  timestampString = "500303740.593971"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "311"
@@ -1226,7 +1226,7 @@
                   moduleName = "Koloda"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/Pods/Koloda/Pod/Classes/KolodaView/DraggableCardView/DraggableCardView.swift"
-                  timestampString = "499120276.625726"
+                  timestampString = "500303740.594224"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "311"
@@ -1361,6 +1361,38 @@
             startingLineNumber = "164"
             endingLineNumber = "164"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "What2Watch/RecomendationVC.swift"
+            timestampString = "500304475.515846"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "591"
+            endingLineNumber = "591"
+            landmarkName = "koloda(_:didSwipeCardAtIndex:inDirection:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "What2Watch/RecomendationVC.swift"
+            timestampString = "500304475.515846"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "420"
+            endingLineNumber = "420"
+            landmarkName = "SaveSwipeEntry(_:Status:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
