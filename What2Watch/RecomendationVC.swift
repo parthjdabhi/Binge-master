@@ -306,6 +306,16 @@ class RecomendationVC: UIViewController {
                         alertController.addAction(okAction)
                         self.presentViewController(alertController, animated: true, completion: nil)
                     }
+                } else {
+                    self.lblMsgCentered?.text = "No Recommendations :("
+                    let alertController = UIAlertController(title: "Swipe More!", message: "Give our algorithms a little more data to work with, head back to the improve accuracy page and keep rating movies!", preferredStyle: UIAlertControllerStyle.Alert)
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (result : UIAlertAction) -> Void in
+                        
+                        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("MainScreenViewController") as! MainScreenViewController!
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    alertController.addAction(okAction)
+                    self.presentViewController(alertController, animated: true, completion: nil)
                 }
             } else {
                 self.lblMsgCentered?.text = "No Recommendations :("

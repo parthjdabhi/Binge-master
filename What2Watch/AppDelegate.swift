@@ -47,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         /// Uncomnet this section for if user is logged in it redirect to main screen when application opens
         
+        //try? FIRAuth.auth()?.signOut()
+        
         if let user = FIRAuth.auth()?.currentUser
         {
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)

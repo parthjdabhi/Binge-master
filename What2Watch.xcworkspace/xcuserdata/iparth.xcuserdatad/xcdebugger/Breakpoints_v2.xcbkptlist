@@ -906,22 +906,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "500302910.388058"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "What2Watch/MainScreenViewController.swift"
             timestampString = "495537279.894393"
             startingColumnNumber = "9223372036854775807"
@@ -1051,7 +1035,7 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/MyProfileViewController.swift"
-                  timestampString = "500303740.586397"
+                  timestampString = "502634506.805668"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "205"
@@ -1066,7 +1050,7 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/MyProfileViewController.swift"
-                  timestampString = "500303740.586676"
+                  timestampString = "502634506.805836"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "205"
@@ -1083,11 +1067,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "500304475.515846"
+            timestampString = "502635112.726214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "347"
-            endingLineNumber = "347"
+            startingLineNumber = "357"
+            endingLineNumber = "357"
             landmarkName = "imageTapped(_:)"
             landmarkType = "5">
             <Locations>
@@ -1099,11 +1083,11 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/RecomendationVC.swift"
-                  timestampString = "500303740.589048"
+                  timestampString = "502634506.807016"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "334"
-                  endingLineNumber = "334"
+                  startingLineNumber = "347"
+                  endingLineNumber = "347"
                   offsetFromSymbolStart = "19">
                </Location>
                <Location
@@ -1114,11 +1098,11 @@
                   moduleName = "Binge"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/What2Watch/RecomendationVC.swift"
-                  timestampString = "500303740.589304"
+                  timestampString = "502634506.807173"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "335"
-                  endingLineNumber = "335"
+                  startingLineNumber = "348"
+                  endingLineNumber = "348"
                   offsetFromSymbolStart = "19">
                </Location>
             </Locations>
@@ -1163,7 +1147,7 @@
                   moduleName = "Koloda"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/Pods/Koloda/Pod/Classes/KolodaView/DraggableCardView/DraggableCardView.swift"
-                  timestampString = "500303740.591807"
+                  timestampString = "502634506.808492"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "70"
@@ -1178,7 +1162,7 @@
                   moduleName = "Koloda"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/Pods/Koloda/Pod/Classes/KolodaView/DraggableCardView/DraggableCardView.swift"
-                  timestampString = "500303740.591971"
+                  timestampString = "502634506.808621"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "70"
@@ -1211,7 +1195,7 @@
                   moduleName = "Koloda"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/Pods/Koloda/Pod/Classes/KolodaView/DraggableCardView/DraggableCardView.swift"
-                  timestampString = "500303740.593971"
+                  timestampString = "502634506.809498"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "311"
@@ -1226,7 +1210,7 @@
                   moduleName = "Koloda"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/2%20What2Watch%20Binge/Binge-master-02Sept/Pods/Koloda/Pod/Classes/KolodaView/DraggableCardView/DraggableCardView.swift"
-                  timestampString = "500303740.594224"
+                  timestampString = "502634506.80962"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "311"
@@ -1371,11 +1355,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "500304475.515846"
+            timestampString = "502635112.726214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "591"
-            endingLineNumber = "591"
+            startingLineNumber = "601"
+            endingLineNumber = "601"
             landmarkName = "koloda(_:didSwipeCardAtIndex:inDirection:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1387,12 +1371,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What2Watch/RecomendationVC.swift"
-            timestampString = "500304475.515846"
+            timestampString = "502635112.726214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
+            startingLineNumber = "430"
+            endingLineNumber = "430"
             landmarkName = "SaveSwipeEntry(_:Status:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "What2Watch/RecomendationVC.swift"
+            timestampString = "502634503.879617"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "What2Watch/RecomendationVC.swift"
+            timestampString = "502634933.508419"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "What2Watch/RecomendationVC.swift"
+            timestampString = "502634938.500444"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

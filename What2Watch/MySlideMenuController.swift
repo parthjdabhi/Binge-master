@@ -76,7 +76,7 @@ class MySlideMenuController : UIViewController {
         btnLogout.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.2).CGColor
         
         
-        self.lblName?.text = "asd asd asd asd"
+        self.lblName?.text = "Hello"
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MySlideMenuController.MyProfile))
         lblName?.addGestureRecognizer(tap)
         lblName?.userInteractionEnabled = true
@@ -144,7 +144,8 @@ class MySlideMenuController : UIViewController {
         })
     }
     
-    func RefreshMovieCount() {
+    func RefreshMovieCount()
+    {
         ref.child("swiped").child(AppState.MyUserID()).observeSingleEventOfType(.Value, withBlock: { snapshot in
             
             CommonUtils.sharedUtils.hideProgress()
@@ -164,18 +165,18 @@ class MySlideMenuController : UIViewController {
                 }
                 
                 if self.movieSwiped.count > 0 {
-                    let watchedMovies = self.movieSwiped.filter({
-                        if let subid = $0[status] as? String {
-                            return subid == status_dislike || subid  == status_like
-                        } else {
-                            return false
-                        }
-                    })
+//                    let watchedMovies = self.movieSwiped.filter({
+//                        if let subid = $0[status] as? String {
+//                            return subid == status_dislike || subid  == status_like
+//                        } else {
+//                            return false
+//                        }
+//                    })
                     //print("watchedMovies : \(watchedMovies)")
                     
-                    if watchedMovies.count > 0 {
-                        self.lblWachCount?.text = "Watched Movies :  \(watchedMovies.count)"
-                        self.lblTimeWaste?.text = "Wasted  \(Int(Float(watchedMovies.count) * 2.5))  hours of life on watching movies"
+                    if self.movieSwiped.count > 0 {
+                        self.lblWachCount?.text = "Watched Movies :  \(self.movieSwiped.count)"
+                        self.lblTimeWaste?.text = "Wasted \(Int(Float(self.movieSwiped.count) * 2.5)) hours of life on watching movies"
                     } else {
                         self.lblTimeWaste?.text = "Wasted  0 hours of life on watching movies"
                     }
