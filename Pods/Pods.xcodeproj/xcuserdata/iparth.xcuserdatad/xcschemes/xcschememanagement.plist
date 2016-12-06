@@ -104,6 +104,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TransitionAnimation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TransitionTreasury.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UIActivityIndicator-for-SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -122,6 +132,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>01E9BD0725F0DF8B3D8BF980B88E548D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>053617A05C5A952CF2888B88D119FE01</key>
 		<dict>
 			<key>primary</key>
@@ -152,7 +167,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2D6BDDA3CA1AA824E948991E2EF4FBFB</key>
+		<key>2DAF223D097786D36D7499001FDFF11B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -172,6 +187,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>622C7BE4D7D2C72A43D22248957A9382</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6C93DE13A9E39F5C57B693BE90DBB2D0</key>
 		<dict>
 			<key>primary</key>
@@ -187,6 +207,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7E9055152DCF71E687A619D26294EECD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8EFE724FDDAA2478F44F082C05BA272C</key>
 		<dict>
 			<key>primary</key>
@@ -197,12 +222,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A90E6B7E32220402DAB736EAB0F22AA6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AB4C5E81EB050A74C800D83B0E4E3975</key>
+		<key>A3A0A96CA382ED7B9A5068A29935A5DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -212,12 +232,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C45290004E0078130C91A71711094467</key>
+		<key>B567BB9509E217B3B1473F52EBE0B3CA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C6EDAA1F49B8FFC6D664EA45BAB5A7D6</key>
+		<key>C45290004E0078130C91A71711094467</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -232,7 +252,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E3856E7970A736F737288F36435FD1A5</key>
+		<key>FC15158E9B9F3FA7D5C87FA8CC366962</key>
 		<dict>
 			<key>primary</key>
 			<true/>

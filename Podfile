@@ -28,6 +28,8 @@ target 'What2Watch' do
     pod 'Koloda', '~> 3.1'
     
     # Pods for What2Watch
+    pod 'TransitionTreasury', '3.0.3'
+    pod 'TransitionAnimation', '3.0.3'
     
     target 'What2WatchTests' do
         inherit! :search_paths

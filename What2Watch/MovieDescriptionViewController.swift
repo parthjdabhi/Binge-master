@@ -11,7 +11,10 @@ import Alamofire
 import SDWebImage
 import UIActivityIndicator_for_SDWebImage
 
-class MovieDescriptionViewController: UIViewController, UITextFieldDelegate {
+import TransitionTreasury
+import TransitionAnimation
+
+class MovieDescriptionViewController: UIViewController, UITextFieldDelegate, NavgationTransitionable {
     
     @IBOutlet var btnBack: UIButton?
     @IBOutlet var poster: UIImageView!
@@ -28,6 +31,8 @@ class MovieDescriptionViewController: UIViewController, UITextFieldDelegate {
     var movieDetail:[String:String]?
     var movieFullDetail:[String:String]?
     
+    var tr_pushTransition: TRNavgationTransitionDelegate?
+    
     override func viewDidLoad() {
         
         lblPlot.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -37,7 +42,12 @@ class MovieDescriptionViewController: UIViewController, UITextFieldDelegate {
         
         lblMovieTitle.text = "\( movieDetail?["movieTitle"] ?? "" )"
         //lblGenere.text = "Genere : \( movieDetail?["genre"] ?? "" )"
- 
+        
+        if let transitionAnimation = tr_pushTransition?.transition as? IBanTangTransitionAnimation {
+            print(transitionAnimation.keyView)
+            print(transitionAnimation.keyViewCopy)
+        }
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(MovieDescriptionViewController.imageTapped(_:)))
         poster.userInteractionEnabled = true
         poster.addGestureRecognizer(tapGestureRecognizer)
@@ -94,7 +104,10 @@ class MovieDescriptionViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func actionBack(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+        //self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.tr_popViewController({ () -> Void in
+            print("Pop finished.")
+        })
     }
     
     @IBAction func actionSearch(sender: AnyObject) {

@@ -109,6 +109,9 @@ PODS:
   - SDWebImage/Core (3.8.1)
   - SVProgressHUD (2.0.3)
   - SWRevealViewController (2.3.0)
+  - TransitionAnimation (3.0.3):
+    - TransitionTreasury (~> 3.0)
+  - TransitionTreasury (3.0.3)
   - UIActivityIndicator-for-SDWebImage (1.2):
     - SDWebImage (~> 3.7)
   - UICKeyChainStore (2.1.0)
@@ -134,6 +137,8 @@ DEPENDENCIES:
   - SDWebImage (~> 3.8)
   - SVProgressHUD (~> 2.0)
   - SWRevealViewController (~> 2.3)
+  - TransitionAnimation (= 3.0.3)
+  - TransitionTreasury (= 3.0.3)
   - UIActivityIndicator-for-SDWebImage
 
 SPEC CHECKSUMS:
@@ -168,9 +173,11 @@ SPEC CHECKSUMS:
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
+  TransitionAnimation: 33d7e6addab7ec74bc28b62e75f3cdc0219006b4
+  TransitionTreasury: 135d50ff34c736b3200b356d3b4e198861ca661f
   UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
   UICKeyChainStore: f1cbd42216a113f0165de1e733e62905b8823432
 
-PODFILE CHECKSUM: edb0b411294dc81b6ef19f8c65fc1e5f31796084
+PODFILE CHECKSUM: 73edb86599fc40f27f2d76f99a2cd3ee87ba1603
 
 COCOAPODS: 1.0.1

@@ -15,6 +15,9 @@ import UIActivityIndicator_for_SDWebImage
 import Koloda
 import pop
 
+import TransitionTreasury
+import TransitionAnimation
+
 //private let numberOfCards: UInt = 5
 private let frameAnimationSpringBounciness: CGFloat = 9
 private let frameAnimationSpringSpeed: CGFloat = 16
@@ -477,9 +480,24 @@ extension MainScreenViewController: KolodaViewDelegate {
     }
     
     func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
+//        let movieDescriptionViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MovieDescriptionViewController") as! MovieDescriptionViewController!
+//        movieDescriptionViewController.movieDetail = movies[Int(index)] as? [String:String]
+//        self.navigationController?.pushViewController(movieDescriptionViewController, animated: true)
+        
+        let updateTransition1: TRPushTransitionMethod = .Blixt(keyView: self.cardHolderView, to: CGRect(x: self.cardHolderView.frame.size.width/3, y: self.cardHolderView.frame.size.height/2, width: 0, height: 0))
+        //let updateTransition2: TRPushTransitionMethod = .IBanTang(keyView: self.cardHolderView)
+        
         let movieDescriptionViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MovieDescriptionViewController") as! MovieDescriptionViewController!
         movieDescriptionViewController.movieDetail = movies[Int(index)] as? [String:String]
-        self.navigationController?.pushViewController(movieDescriptionViewController, animated: true)
+        navigationController?.tr_pushViewController(movieDescriptionViewController, method: updateTransition1)
+        
+//        let updateTransition3: TRPresentTransitionMethod = .Elevate(maskView: self.cardHolderView, to: UIScreen.mainScreen().tr_center)
+//        let nav = UINavigationController(rootViewController: movieDescriptionViewController)
+//        
+//        present
+//        tr_presentViewContr (nav, method: updateTransition, completion: {
+//            print("Present finished.")
+//        })
     }
 
     

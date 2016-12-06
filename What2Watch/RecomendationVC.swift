@@ -174,7 +174,7 @@ class RecomendationVC: UIViewController {
                                         self.movieSwiped.append(movieSwiped)
                                     }
                                 }
-                            }
+                             }
                         }
                         print("self.movieSwiped || My_Like_top2000 : \(self.movieSwiped.count)")
                         AppState.sharedInstance.My_Like_top2000 = self.movieSwiped

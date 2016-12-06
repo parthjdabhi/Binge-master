@@ -51,6 +51,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         if let user = FIRAuth.auth()?.currentUser
         {
+            if let swipedMovieCount = NSUserDefaults.standardUserDefaults().integerForKey("swipedMovieCount") as? NSInteger {
+                print("swipedMovieCount : ",swipedMovieCount)
+            }
+            
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let rootViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SWRevealViewController") as? UIViewController
             let navigationController = UINavigationController(rootViewController: rootViewController!)

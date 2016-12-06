@@ -2801,9 +2801,6 @@
                                     <action selector="actionSearch:" destination="1Qb-ET-hnJ" eventType="touchUpInside" id="MbA-jd-up9"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tyo-mU-ap6">
-                                <rect key="frame" x="0.0" y="65" width="375" height="329"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cdj-IY-koj">
                                 <rect key="frame" x="0.0" y="394" width="375" height="273"/>
                                 <subviews>
@@ -2894,12 +2891,14 @@
                                     <constraint firstItem="N8Y-O5-UX2" firstAttribute="leading" secondItem="Cdj-IY-koj" secondAttribute="leading" constant="8" id="x6X-4X-zzG"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tyo-mU-ap6">
+                                <rect key="frame" x="0.0" y="65" width="375" height="329"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="R58-fq-5Fs" firstAttribute="leading" secondItem="2hI-XT-vZA" secondAttribute="trailing" constant="-41" id="1mj-jJ-lSs"/>
                             <constraint firstItem="Cdj-IY-koj" firstAttribute="centerX" secondItem="rBz-wG-ElD" secondAttribute="centerX" id="30t-wi-2kk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Tyo-mU-ap6" secondAttribute="trailing" constant="-16" id="85b-b1-byk"/>
                             <constraint firstItem="Tyo-mU-ap6" firstAttribute="leading" secondItem="rBz-wG-ElD" secondAttribute="leadingMargin" constant="-20" id="952-yb-2BP"/>
                             <constraint firstItem="Cdj-IY-koj" firstAttribute="leading" secondItem="rBz-wG-ElD" secondAttribute="leading" id="Ab5-gZ-F7H"/>
                             <constraint firstItem="BLT-Gq-gOD" firstAttribute="centerX" secondItem="R58-fq-5Fs" secondAttribute="centerX" id="BdS-yi-2rp"/>
@@ -2907,9 +2906,10 @@
                             <constraint firstItem="Tyo-mU-ap6" firstAttribute="centerX" secondItem="rBz-wG-ElD" secondAttribute="centerX" id="E4a-ov-NER"/>
                             <constraint firstItem="R58-fq-5Fs" firstAttribute="centerX" secondItem="rBz-wG-ElD" secondAttribute="centerX" id="Efm-GW-dNn"/>
                             <constraint firstItem="R58-fq-5Fs" firstAttribute="top" secondItem="ySf-Ai-UVl" secondAttribute="bottom" constant="-20" id="HGc-Od-Z9y"/>
-                            <constraint firstItem="Tyo-mU-ap6" firstAttribute="leading" secondItem="rBz-wG-ElD" secondAttribute="leadingMargin" constant="-16" id="KtW-7H-qea"/>
                             <constraint firstAttribute="trailing" secondItem="Tyo-mU-ap6" secondAttribute="trailing" id="M8x-16-FhR"/>
+                            <constraint firstItem="Tyo-mU-ap6" firstAttribute="leading" secondItem="rBz-wG-ElD" secondAttribute="leading" id="NBB-Xf-gws"/>
                             <constraint firstItem="BLT-Gq-gOD" firstAttribute="top" secondItem="R58-fq-5Fs" secondAttribute="bottom" constant="-44" id="W8G-CL-DS8"/>
+                            <constraint firstAttribute="trailing" secondItem="Tyo-mU-ap6" secondAttribute="trailing" id="Yd6-1e-XS3"/>
                             <constraint firstItem="Tyo-mU-ap6" firstAttribute="top" secondItem="R58-fq-5Fs" secondAttribute="bottom" constant="1" id="d4D-O2-3Ll"/>
                             <constraint firstItem="Tyo-mU-ap6" firstAttribute="leading" secondItem="rBz-wG-ElD" secondAttribute="leading" id="gPH-1d-aOf"/>
                             <constraint firstItem="2hI-XT-vZA" firstAttribute="centerY" secondItem="BLT-Gq-gOD" secondAttribute="centerY" id="lQq-qG-Y9I"/>

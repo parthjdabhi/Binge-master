@@ -154,6 +154,10 @@ class MySlideMenuController : UIViewController {
             if snapshot.exists() {
                 
                 print(snapshot.childrenCount)
+                
+                NSUserDefaults.standardUserDefaults().setObject(snapshot.childrenCount, forKey:"swipedMovieCount")
+                NSUserDefaults.standardUserDefaults().synchronize()
+                
                 //let swiped = snapshot.valueInExportFormat() as? NSDictionary
                 let enumerator = snapshot.children
                 while let rest = enumerator.nextObject() as? FIRDataSnapshot {
