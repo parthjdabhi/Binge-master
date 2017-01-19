@@ -35,8 +35,8 @@ class WatchlistViewController: UIViewController {
         
         CommonUtils.sharedUtils.showProgress(self.view, label: "Waiting..")
         ref.child("swiped").child(AppState.MyUserID())
-            .queryOrderedByChild("status")
-            .queryEqualToValue("Watchlist")
+            //.queryOrderedByChild("status")
+            //.queryEqualToValue("Watchlist")
             .observeSingleEventOfType(.Value, withBlock: { snapshot in
                 
                 CommonUtils.sharedUtils.hideProgress()

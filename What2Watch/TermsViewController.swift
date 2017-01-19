@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 import SWRevealViewController
+import SVProgressHUD
 
 class TermsViewController: BaseViewController, UIPageViewControllerDelegate {
 
@@ -48,6 +49,12 @@ class TermsViewController: BaseViewController, UIPageViewControllerDelegate {
             (finished: Bool) -> Void in
             self.background.fadeIn()
         })
+        
+//        if approvedCheckbox.hidden == false {
+//            self.delegate.showPageController()
+//        } else {
+//            self.delegate.hiddenPageController()
+//        }
     }
     
     override func  preferredStatusBarStyle()-> UIStatusBarStyle {
@@ -60,6 +67,7 @@ class TermsViewController: BaseViewController, UIPageViewControllerDelegate {
         forwardArrow.hidden = false
         approvedCheckbox.hidden = false
         
+        isTermAccepted = true
         self.delegate.hiddenPageController();
     }
     
@@ -68,6 +76,9 @@ class TermsViewController: BaseViewController, UIPageViewControllerDelegate {
         getStartedText.hidden = true
         forwardArrow.hidden = true
         approvedCheckbox.hidden = true
+        
+        isTermAccepted = false
+        self.delegate.showPageController()
     }
     
     @IBAction func getStartedButton(sender: AnyObject)
@@ -89,8 +100,9 @@ class TermsViewController: BaseViewController, UIPageViewControllerDelegate {
         print(firstNameInfo)
         print(lastNameInfo)
         print(userPicture)
+        
         if firstNameInfo == "" && firstNameInfo == "" {
-            CommonUtils.sharedUtils.showAlert(self, title: "Alert!", message: "Required your firstname & lastname.")
+            SVProgressHUD.showInfoWithStatus("Required your firstname & lastname.")
             return
         }
 //        else if emailInfo == "" {
@@ -98,11 +110,12 @@ class TermsViewController: BaseViewController, UIPageViewControllerDelegate {
 //            return
 //        }
         else if emailInfo == "" && passwordInfo == "" {
-            CommonUtils.sharedUtils.showAlert(self, title: "Alert!", message: "Required your email address and password.")
+            SVProgressHUD.showInfoWithStatus("Required your email address and password.")
             return
         }
         else if passwordInfo.characters.count < 6 {
-            CommonUtils.sharedUtils.showAlert(self, title: "Alert!", message: "Your password should be of atleast six character long.")
+            //CommonUtils.sharedUtils.showAlert(self, title: "Alert!", message: "")
+            SVProgressHUD.showInfoWithStatus("Your password should be of atleast six character long.")
             return
         }
         else

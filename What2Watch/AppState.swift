@@ -44,10 +44,10 @@ class AppState: NSObject {
     }
     
     static func Logout() {
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("lastSwiped_top2000")
-        
+        //NSUserDefaults.standardUserDefaults().removeObjectForKey("top")
     }
 }
+
 
 let globalGroup = dispatch_group_create();
 let queue = NSOperationQueue()
@@ -62,5 +62,8 @@ let myUserID = {
 var myGroups:[Dictionary<String,AnyObject>] = []
 var filteredUser:[Dictionary<String,AnyObject>] = []
 var selectedUsers:[Dictionary<String,AnyObject>] = []
+    
+var isTermAccepted:Bool = false
 
+var globalPageControl: UIPageControl?
 

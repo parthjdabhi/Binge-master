@@ -17,6 +17,7 @@ import Firebase
 import OAuthSwift
 import IQKeyboardManagerSwift
 import Alamofire
+import SWRevealViewController
 
 //@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -51,19 +52,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         if let user = FIRAuth.auth()?.currentUser
         {
-            if let swipedMovieCount = NSUserDefaults.standardUserDefaults().integerForKey("swipedMovieCount") as? NSInteger {
-                print("swipedMovieCount : ",swipedMovieCount)
-            }
+            print("Loggedin in user: \(user)")
+            print("swipedMovieCount : \(NSUserDefaults.standardUserDefaults().integerForKey("swipedMovieCount") as Int ?? 0)")
             
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let rootViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SWRevealViewController") as? UIViewController
-            let navigationController = UINavigationController(rootViewController: rootViewController!)
-            navigationController.navigationBarHidden = true // or not, your choice.
-            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-            self.window!.rootViewController = navigationController
-            self.window!.makeKeyAndVisible()
+//            if let swipedMovieCount = NSUserDefaults.standardUserDefaults().integerForKey("swipedMovieCount") as Int? where swipedMovieCount >= 50 {
+//                print("swipedMovieCount : ",swipedMovieCount)
+//                
+//                //if User has rate more than [ ] no of moview redirect hem to recommendation page
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                
+//                let destinationController = storyboard.instantiateViewControllerWithIdentifier("RecomendationVC") as? RecomendationVC
+//                let frontNavigationController = UINavigationController(rootViewController: destinationController!)
+//                frontNavigationController.navigationBarHidden = true
+//                
+//                let rearViewController = storyboard.instantiateViewControllerWithIdentifier("MySlideMenuController") as? MySlideMenuController
+//                let mainRevealController = SWRevealViewController()
+//                
+//                mainRevealController.rearViewController = rearViewController
+//                mainRevealController.frontViewController = frontNavigationController
+//                
+//                let navigationController = UINavigationController(rootViewController: mainRevealController)
+//                navigationController.navigationBarHidden = true
+//                self.window!.rootViewController = mainRevealController
+//                self.window?.makeKeyAndVisible()
+//            }
+//            else
+//            {
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let rootViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SWRevealViewController") as? UIViewController
+                let navigationController = UINavigationController(rootViewController: rootViewController!)
+                navigationController.navigationBarHidden = true // or not, your choice.
+                self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+                self.window!.rootViewController = navigationController
+                self.window!.makeKeyAndVisible()
+//            }
         }
-        
         
 //        let movieDetail = "http://www.omdbapi.com/"  //http:// www.omdbapi.com/?i=(*imdbID*)&plot=short&r=json
 //        Alamofire.request(.GET, movieDetail, parameters: ["i": "tt0091203", "apikey":"57288a3b", "plot":"short", "r":"json"])

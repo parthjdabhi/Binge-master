@@ -23,6 +23,7 @@ class DOBViewController: BaseViewController {
         user = FIRAuth.auth()?.currentUser
         
         datePickView.maximumDate = NSDate()
+        //datePickView.setValue(UIColor.whiteColor(), forKeyPath: "textColor")
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yy-MM-dd"

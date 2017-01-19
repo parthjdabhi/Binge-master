@@ -12,6 +12,7 @@ import Firebase
 import FirebaseStorage
 
 
+
 class CommonUtils: NSObject {
     static let sharedUtils = CommonUtils()
     var progressView : MBProgressHUD = MBProgressHUD.init()

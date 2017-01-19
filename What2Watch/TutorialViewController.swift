@@ -33,6 +33,8 @@ class TutorialViewController: UIViewController {
         //self.scrollView.contentSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width * 6, UIScreen.mainScreen().bounds.size.height)
         self.scrollView.contentSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width * 6, 1.0)
         self.initViews()
+        
+        globalPageControl = pageControl
     }
     
     override func  preferredStatusBarStyle()-> UIStatusBarStyle {
@@ -136,7 +138,7 @@ extension TutorialViewController: UIScrollViewDelegate
 
         if diffFromCenter > 0 {
             nextIndex = currentIndex! + 1
-        }else {
+        } else {
             nextIndex = currentIndex! - 1
         }
         
@@ -146,19 +148,27 @@ extension TutorialViewController: UIScrollViewDelegate
         if nextIndex > 0 && nextIndex < 6{
             (orderedViewControllers[nextIndex] as! BaseViewController).background.backgroundColor = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: CGFloat(currentPageAlpha))
         }
-       
     }
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         let page = (Int)((scrollView.contentOffset.x) / (self.view.frame.size.width))
-        //print("page \(page)")
+        print("page \(page)")
         pageControl.currentPage = page
         (orderedViewControllers[page] as! BaseViewController).background.backgroundColor = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: CGFloat(0))
+        
+        if page == 5 && isTermAccepted == true {
+            self.pageControl.hidden = true
+        } else {
+            self.pageControl.hidden = false
+        }
     }
 }
 
 extension TutorialViewController: BaseViewControllerDelegate {
     func hiddenPageController() {
         self.pageControl.hidden = true
+    }
+    func showPageController() {
+        self.pageControl.hidden = false
     }
 }

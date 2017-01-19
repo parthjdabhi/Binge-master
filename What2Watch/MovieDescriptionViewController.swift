@@ -32,6 +32,7 @@ class MovieDescriptionViewController: UIViewController, UITextFieldDelegate, Nav
     var movieFullDetail:[String:String]?
     
     var tr_pushTransition: TRNavgationTransitionDelegate?
+    weak var modalDelegate: ModalViewControllerDelegate?
     
     override func viewDidLoad() {
         
@@ -108,6 +109,7 @@ class MovieDescriptionViewController: UIViewController, UITextFieldDelegate, Nav
         self.navigationController?.tr_popViewController({ () -> Void in
             print("Pop finished.")
         })
+        modalDelegate?.modalViewControllerDismiss(callbackData: ["title":"test" ?? ""])
     }
     
     @IBAction func actionSearch(sender: AnyObject) {

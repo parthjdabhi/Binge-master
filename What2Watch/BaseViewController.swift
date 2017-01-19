@@ -10,6 +10,7 @@ import UIKit
 
 protocol BaseViewControllerDelegate {
     func hiddenPageController()
+    func showPageController()
 }
 
 class BaseViewController: UIViewController {

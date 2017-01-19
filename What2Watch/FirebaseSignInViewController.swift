@@ -14,6 +14,7 @@ import FBSDKShareKit
 //import TwitterKit
 //import Fabric
 import SWRevealViewController
+import SVProgressHUD
 
 
 @objc(FirebaseSignInViewController)
@@ -72,17 +73,23 @@ class FirebaseSignInViewController: UIViewController, UITextFieldDelegate {
         // Sign In with credentials.
         let email = emailField.text!
         let password = passwordField.text!
-        if email.isEmpty || password.isEmpty {
-            CommonUtils.sharedUtils.showAlert(self, title: "Error", message: "Email or password is missing.")
+        if email.isEmpty {
+            SVProgressHUD.showInfoWithStatus("Use an appropriate registered email address.")
+            //CommonUtils.sharedUtils.showAlert(self, title: "Message", message: "Use an appropriate registered email address.")
+        }
+        else if password.isEmpty || password.characters.count < 6 {
+            SVProgressHUD.showInfoWithStatus("Your password should be at least six characters long")
+            //CommonUtils.sharedUtils.showAlert(self, title: "Message", message: "Your password should be at least six characters long")
         }
         else{
-            CommonUtils.sharedUtils.showProgress(self.view, label: "Signing in...")
+            CommonUtils.sharedUtils.showProgress(self.view, label: "Signing in..")
             FIRAuth.auth()?.signInWithEmail(email, password: password) { (user, error) in
                 dispatch_async(dispatch_get_main_queue(), {
                     CommonUtils.sharedUtils.hideProgress()
                 })
                 if let error = error {
-                    CommonUtils.sharedUtils.showAlert(self, title: "Error", message: "The username or password you have entered do not correspond with any of our accounts.")
+                    SVProgressHUD.showErrorWithStatus("The username or password you have entered do not correspond with any of our accounts.")
+                    //CommonUtils.sharedUtils.showAlert(self, title: "Error", message: "The username or password you have entered do not correspond with any of our accounts.")
                     print(error.localizedDescription)
                 }
                 else{

@@ -19,7 +19,10 @@ class MyProfileViewController: UIViewController, UICollectionViewDelegate, UICol
     
     var imgs = ["ic_madel","ic_watch-video","ic_watchlist","ic_madel","ic_watchlist"]
     private var currentPage: Int = 1
+    private var movieSwiped:Array<[String:AnyObject]> = []
     private var movieWatched:Array<[String:AnyObject]> = []
+    private var movieLiked:Array<[String:AnyObject]> = []
+    private var movieDisliked:Array<[String:AnyObject]> = []
     
     private var pageSize: CGSize {
         let layout = self.collectionView.collectionViewLayout as! PDCarouselFlowLayout
@@ -235,7 +238,7 @@ class MyProfileViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Set Static values 5 here for test purpose
-        return 5
+        return 3
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -253,12 +256,16 @@ class MyProfileViewController: UIViewController, UICollectionViewDelegate, UICol
         switch indexPath.row {
         case 0:
             cell.image.image = UIImage(named: imgs[indexPath.row])
-            cell.lblValue.text = "-"
-            cell.lblTitle.text = "Title"
+            cell.lblValue.text = "\(self.movieDisliked.count)"
+            cell.lblTitle.text = "Disliked Movies"
         case 1:
+            cell.image.image = UIImage(named: imgs[indexPath.row])
+            cell.lblValue.text = "\(self.movieLiked.count)"
+            cell.lblTitle.text = "Liked Movies"
+        case 2:
             cell.image.image = UIImage(named: "ic_watch-video")
             cell.lblValue.text = "\(self.movieWatched.count)"
-            cell.lblTitle.text = "Watched Movies:"
+            cell.lblTitle.text = "Watched Movies"
         default:
             cell.image.image = UIImage(named: imgs[indexPath.row])
             cell.lblValue.text = "-"
@@ -300,27 +307,57 @@ class MyProfileViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func fetchMovieWatched() {
+        
         ref.child("swiped").child(AppState.MyUserID()).observeSingleEventOfType(.Value, withBlock: { snapshot in
             
             CommonUtils.sharedUtils.hideProgress()
+            self.movieLiked.removeAll()
+            self.movieDisliked.removeAll()
             self.movieWatched.removeAll()
             
             if snapshot.exists() {
                 
                 print(snapshot.childrenCount)
-                //let swiped = snapshot.valueInExportFormat() as? NSDictionary
+                
                 let enumerator = snapshot.children
                 while let rest = enumerator.nextObject() as? FIRDataSnapshot {
                     //print("rest.key =>>  \(rest.key) =>>   \(rest.value)")
                     if var dic = rest.value as? [String:AnyObject] {
                         dic["key"] = rest.key
-                        self.movieWatched.append(dic)
+                        self.movieSwiped.append(dic)
                     }
                 }
                 
-                if self.movieWatched.count > 0 {
-                    self.collectionView.reloadData()
+                if self.movieSwiped.count > 0
+                {
+                    self.movieLiked = self.movieSwiped.filter({
+                        if let subid = $0[status] as? String {
+                            return subid == status_like
+                        } else {
+                            return false
+                        }
+                    })
+                    
+                    self.movieDisliked = self.movieSwiped.filter({
+                        if let subid = $0[status] as? String {
+                            return subid == status_dislike
+                        } else {
+                            return false
+                        }
+                    })
+                    
+                    self.movieWatched = self.movieSwiped.filter({
+                        if let subid = $0[status] as? String {
+                            return subid == status_watchlist
+                        } else {
+                            return false
+                        }
+                    })
                 }
+                
+                //if self.movieWatched.count > 0 {
+                    self.collectionView.reloadData()
+                //}
             } else {
                 // Not found any movie
             }

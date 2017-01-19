@@ -24,12 +24,15 @@ private let frameAnimationSpringSpeed: CGFloat = 16
 private let kolodaCountOfVisibleCards = 2
 private let kolodaAlphaValueSemiTransparent: CGFloat = 0.05
 
-class MainScreenViewController: UIViewController {
+class MainScreenViewController: UIViewController, ModalTransitionDelegate {
  
+    var tr_presentTransition: TRViewControllerTransitionDelegate?
+    
     @IBOutlet var profileInfo: UILabel!
     @IBOutlet var profilePicture: UIImageView!
     @IBOutlet var poster: UIImageView!
     @IBOutlet var btnMenu: UIButton?
+    @IBOutlet var btnSearch: UIButton?
     @IBOutlet var imgInstruction: UIImageView!
     //@IBOutlet var draggableBackground: DraggableViewBackground!
     @IBOutlet weak var cardHolderView: CustomKolodaView!
@@ -149,6 +152,10 @@ class MainScreenViewController: UIViewController {
     
     @IBAction func menuButton(sender: AnyObject) {
         
+    }
+    
+    @IBAction func onSearchButtonAction(sender: AnyObject) {
+        OpenMovieDescription(ForIndex: Int(cardHolderView.currentCardIndex))
     }
     
     /**
@@ -470,6 +477,35 @@ class MainScreenViewController: UIViewController {
     func applicationDidTimout(notification: NSNotification) {
         showInstruction(1)
     }
+    
+    func OpenMovieDescription(ForIndex index:Int) {
+        //        let movieDescriptionViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MovieDescriptionViewController") as! MovieDescriptionViewController!
+        //        movieDescriptionViewController.movieDetail = movies[Int(index)] as? [String:String]
+        //        self.navigationController?.pushViewController(movieDescriptionViewController, animated: true)
+        
+        let updateTransition1: TRPushTransitionMethod = .Blixt(keyView: self.cardHolderView, to: CGRect(x: self.cardHolderView.frame.size.width/3, y: self.cardHolderView.frame.size.height/2, width: 0, height: 0))
+        //let updateTransition2: TRPushTransitionMethod = .IBanTang(keyView: self.cardHolderView)
+        
+        let movieDescriptionViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MovieDescriptionViewController") as! MovieDescriptionViewController!
+        movieDescriptionViewController.movieDetail = movies[Int(index)] as? [String:String]
+        //navigationController?.tr_pushViewController(movieDescriptionViewController, method: updateTransition1)
+        
+        
+//        var trans1 = PresentTransition(name: "Twitter", imageName: "Twitter60x60", presentMethod: .Twitter, interactive: false)
+        
+        movieDescriptionViewController.modalDelegate = self
+        tr_presentViewController(movieDescriptionViewController, method: TRPresentTransitionMethod.Twitter, statusBarStyle: TRStatusBarStyle.Default) {
+            print("Present finished.")
+        }
+        
+        //        let updateTransition3: TRPresentTransitionMethod = .Elevate(maskView: self.cardHolderView, to: UIScreen.mainScreen().tr_center)
+        //        let nav = UINavigationController(rootViewController: movieDescriptionViewController)
+        //
+        //        present
+        //        tr_presentViewContr (nav, method: updateTransition, completion: {
+        //            print("Present finished.")
+        //        })
+    }
 }
 
 //MARK: KolodaViewDelegate
@@ -480,24 +516,8 @@ extension MainScreenViewController: KolodaViewDelegate {
     }
     
     func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
-//        let movieDescriptionViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MovieDescriptionViewController") as! MovieDescriptionViewController!
-//        movieDescriptionViewController.movieDetail = movies[Int(index)] as? [String:String]
-//        self.navigationController?.pushViewController(movieDescriptionViewController, animated: true)
-        
-        let updateTransition1: TRPushTransitionMethod = .Blixt(keyView: self.cardHolderView, to: CGRect(x: self.cardHolderView.frame.size.width/3, y: self.cardHolderView.frame.size.height/2, width: 0, height: 0))
-        //let updateTransition2: TRPushTransitionMethod = .IBanTang(keyView: self.cardHolderView)
-        
-        let movieDescriptionViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MovieDescriptionViewController") as! MovieDescriptionViewController!
-        movieDescriptionViewController.movieDetail = movies[Int(index)] as? [String:String]
-        navigationController?.tr_pushViewController(movieDescriptionViewController, method: updateTransition1)
-        
-//        let updateTransition3: TRPresentTransitionMethod = .Elevate(maskView: self.cardHolderView, to: UIScreen.mainScreen().tr_center)
-//        let nav = UINavigationController(rootViewController: movieDescriptionViewController)
-//        
-//        present
-//        tr_presentViewContr (nav, method: updateTransition, completion: {
-//            print("Present finished.")
-//        })
+        OpenMovieDescription(ForIndex: Int(index))
+        cardHolderView.currentCardIndex
     }
 
     

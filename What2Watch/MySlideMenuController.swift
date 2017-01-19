@@ -37,7 +37,7 @@ class MySlideMenuController : UIViewController {
     @IBOutlet weak var btnImproveAccu: UIButton?
     @IBOutlet weak var btnShareWhat2W: UIButton?
     @IBOutlet weak var btnHelp: UIButton?
-    @IBOutlet weak var btnMainScreen: UIButton!
+    //@IBOutlet weak var btnMainScreen: UIButton!
     @IBOutlet weak var btnLogout: UIButton!
     
     var ref = FIRDatabase.database().reference()
@@ -69,8 +69,8 @@ class MySlideMenuController : UIViewController {
         imgProfile?.layer.masksToBounds = true
         imgProfile?.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.2).CGColor
         
-        btnMainScreen.layer.borderWidth = 1
-        btnMainScreen.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.2).CGColor
+        //btnMainScreen.layer.borderWidth = 1
+        //btnMainScreen.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.2).CGColor
         
         btnLogout.layer.borderWidth = 1
         btnLogout.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.2).CGColor
@@ -194,8 +194,8 @@ class MySlideMenuController : UIViewController {
                     })
                     //print("watchlistMovies : \(watchlistMovies)")
                     
-                    if watchlistMovies.count > 0 {
-                        self.lblCount?.text = "\(watchlistMovies.count)"
+                    if self.movieSwiped.count > 0 {
+                        self.lblCount?.text = "\(self.movieSwiped.count)"
                         self.lblCount?.hidden = false
                     } else {
                         // Not found any movie in watchlist
