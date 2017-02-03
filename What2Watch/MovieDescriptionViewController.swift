@@ -112,7 +112,24 @@ class MovieDescriptionViewController: UIViewController, UITextFieldDelegate, Nav
         modalDelegate?.modalViewControllerDismiss(callbackData: ["title":"test" ?? ""])
     }
     
-    @IBAction func actionSearch(sender: AnyObject) {
+    @IBAction func actionSearch(sender: AnyObject)
+    {
+        let alertReport = UIAlertController(title: "Report", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let noTitle = UIAlertAction(title: "No title on poster", style: UIAlertActionStyle.Default) { (action) in
+            print("No title on poster")
+        }
+        alertReport.addAction(noTitle)
+        let inappropriate = UIAlertAction(title: "Inappropriate Content", style: UIAlertActionStyle.Default) { (action) in
+            print("Inappropriate Content")
+        }
+        alertReport.addAction(inappropriate)
+        let Other = UIAlertAction(title: "Other", style: UIAlertActionStyle.Default) { (action) in
+            print("Other")
+        }
+        alertReport.addAction(Other)
+        self.navigationController?.presentViewController(alertReport, animated: true) {
+            print("Alert presented")
+        }
     }
 }
 

@@ -39,8 +39,11 @@ class FirebaseSignInViewController: UIViewController, UITextFieldDelegate {
         
         emailField.setPlaceholderColor()
         passwordField.setPlaceholderColor()
-        emailField.setLeftMargin()
-        passwordField.setLeftMargin()
+        emailField.setLeftMargin(10)
+        passwordField.setLeftMargin(10)
+        emailField.setCornerRadious(6)
+        passwordField.setCornerRadious(6)
+        login.setCornerRadious(6)
         
         emailField.delegate = self
         passwordField.delegate = self

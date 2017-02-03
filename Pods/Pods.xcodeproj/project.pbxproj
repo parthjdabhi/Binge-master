@@ -298,6 +298,8 @@
 		5D0EFC312AFCEEE5670E11F9E3B0AD30 /* MPEventBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B941375CB90BDD49A9845519A3CDEA4 /* MPEventBinding.m */; };
 		5DB28EB181DDB2482EAB7052C0FFDD4A /* FBSDKShareKit+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 66E5FC07A5B9EA1CD5BFC859AF4E5680 /* FBSDKShareKit+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5DCD12C2C139245388578C182CACC06D /* IQUIWindow+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1524803391F070F7023765A06E7A86 /* IQUIWindow+Hierarchy.swift */; };
+		5E266E0C1E44997F0058B6DE /* TouchDownGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E266E0A1E44997F0058B6DE /* TouchDownGestureRecognizer.h */; };
+		5E266E0D1E44997F0058B6DE /* TouchDownGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E266E0B1E44997F0058B6DE /* TouchDownGestureRecognizer.m */; };
 		5E34A21E3C42EBE6CAA9FA33064BD345 /* TRNavgationTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D122A42DE088630584DCF9452F41A25D /* TRNavgationTransitionDelegate.swift */; };
 		5EA916E98A026DD4FC5E05EF9B921F0F /* FBSDKInternalUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 06532B5AAE8221D692D0F91C03EDBEBE /* FBSDKInternalUtility.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5F26B65B4A4711EB4BC2BC9BC48FF041 /* BFAppLinkReturnToRefererController.h in Headers */ = {isa = PBXBuildFile; fileRef = D4D4521868502859B8FA5B1E493DE507 /* BFAppLinkReturnToRefererController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1443,6 +1445,8 @@
 		5D8E8135A40ED191959BB524B581208A /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
 		5DD15509C01E03DE16097FBA4883CD95 /* FBSDKLoginManagerLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginManagerLogger.m; path = FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginManagerLogger.m; sourceTree = "<group>"; };
 		5E0A7938033B43D7DD91807B0714A91D /* FBSDKLoginKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSDKLoginKit-dummy.m"; sourceTree = "<group>"; };
+		5E266E0A1E44997F0058B6DE /* TouchDownGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchDownGestureRecognizer.h; path = SWRevealViewController/TouchDownGestureRecognizer.h; sourceTree = "<group>"; };
+		5E266E0B1E44997F0058B6DE /* TouchDownGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouchDownGestureRecognizer.m; path = SWRevealViewController/TouchDownGestureRecognizer.m; sourceTree = "<group>"; };
 		5EBFBD9A971E850FED09E421AD9913F7 /* FBSDKLikeActionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLikeActionController.m; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKLikeActionController.m; sourceTree = "<group>"; };
 		5F7C19EC0DF3BCB49FCDC1764CACA9CA /* MPArrowLeft@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "MPArrowLeft@2x.png"; path = "Mixpanel/Images/MPArrowLeft@2x.png"; sourceTree = "<group>"; };
 		5FAA4AEEA3BDCBB3A1209679F62A35BE /* FBSDKPaymentObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKPaymentObserver.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKPaymentObserver.m; sourceTree = "<group>"; };
@@ -2563,6 +2567,8 @@
 			children = (
 				76DC8128A5AE7D14453BE3E1A23909F5 /* SWRevealViewController.h */,
 				81F035936B85DD809D8D83E88E58128D /* SWRevealViewController.m */,
+				5E266E0A1E44997F0058B6DE /* TouchDownGestureRecognizer.h */,
+				5E266E0B1E44997F0058B6DE /* TouchDownGestureRecognizer.m */,
 				529EDEBB9C679E1CB9DE029E6C1C89F7 /* Support Files */,
 			);
 			path = SWRevealViewController;
@@ -4205,6 +4211,7 @@
 				B640015FD6F6684CB649C15A87933AF6 /* ActionSheetMultipleStringPicker.h in Headers */,
 				B0BB57516C3CEC4EE42E3FE727292187 /* ActionSheetPicker-3.0-umbrella.h in Headers */,
 				848C447B17BB93A8BC6757BB8DD4EC99 /* ActionSheetPicker.h in Headers */,
+				5E266E0C1E44997F0058B6DE /* TouchDownGestureRecognizer.h in Headers */,
 				D4447FF472FB1BB8EEC77B7694DA3C7F /* ActionSheetStringPicker.h in Headers */,
 				53E0825DC621F2555B3FA9A8687CF7B4 /* DistancePickerView.h in Headers */,
 				68FB561B4E31FF535A983D289E8659CA /* SWActionSheet.h in Headers */,
@@ -5350,6 +5357,7 @@
 				CEA3240572C6DC666437DBDD3415ABDD /* ActionSheetStringPicker.m in Sources */,
 				1CC9E081387D99D2B70909751C22AA30 /* DistancePickerView.m in Sources */,
 				E9F339DE75CB68B1AC97BB659A4A25CF /* SWActionSheet.m in Sources */,
+				5E266E0D1E44997F0058B6DE /* TouchDownGestureRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

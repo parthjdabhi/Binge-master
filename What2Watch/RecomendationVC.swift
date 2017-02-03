@@ -76,7 +76,7 @@ class RecomendationVC: UIViewController {
         if let revealVC = self.revealViewController() {
             self.btnMenu?.addTarget(revealVC, action: #selector(revealVC.revealToggle(_:)), forControlEvents: .TouchUpInside)
             self.view.addGestureRecognizer(revealVC.panGestureRecognizer());
-            //            self.navigationController?.navigationBar.addGestureRecognizer(revealVC.panGestureRecognizer())
+//            self.navigationController?.navigationBar.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
         
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(RecomendationVC.imageTapped(_:)))
@@ -205,7 +205,7 @@ class RecomendationVC: UIViewController {
                 
                 if AppState.sharedInstance.My_Like_top2000.count > 0
                     && AppState.sharedInstance.My_Like_MovieID_top2000.count > 0
-                    && AppState.sharedInstance.accu_All_top2000?.count > 0
+                    //&& AppState.sharedInstance.accu_All_top2000?.count > 0
                 {
                     //print("My Liked Movie List : \(AppState.sharedInstance.My_Like_top2000)")
                     if AppState.sharedInstance.My_Like_top2000.count > 0 {
@@ -335,6 +335,24 @@ class RecomendationVC: UIViewController {
         })
     }
 
+    override func viewWillAppear(animated: Bool) {
+        
+        // For Fixing white half color in background of Status bar
+        
+//        self.navigationController?.navigationBarHidden =  true
+//        
+//        //Status bar style and visibility
+//        UIApplication.sharedApplication().statusBarHidden = false
+//        UIApplication.sharedApplication().statusBarStyle = .LightContent
+//        
+//        //Change status bar color
+//        let statusBar: UIView = UIApplication.sharedApplication().valueForKey("statusBar") as! UIView
+//        if statusBar.respondsToSelector("setBackgroundColor:") {
+//            statusBar.backgroundColor = UIColor.redColor()
+//        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -115,7 +115,7 @@ class TermsViewController: BaseViewController, UIPageViewControllerDelegate {
         }
         else if passwordInfo.characters.count < 6 {
             //CommonUtils.sharedUtils.showAlert(self, title: "Alert!", message: "")
-            SVProgressHUD.showInfoWithStatus("Your password should be of atleast six character long.")
+            SVProgressHUD.showInfoWithStatus("Your password should be at least six characters long")
             return
         }
         else

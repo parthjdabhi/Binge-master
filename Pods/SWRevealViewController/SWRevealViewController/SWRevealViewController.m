@@ -27,6 +27,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "SWRevealViewController.h"
+#import "TouchDownGestureRecognizer.h"
 
 
 #pragma mark - StatusBar Helper Function
@@ -1498,6 +1499,8 @@ const int FrontViewPositionNone = 0xff;
     (newPosition >= FrontViewPositionRightMostRemoved || newPosition <= FrontViewPositionLeftSideMostRemoved ) &&
     (_frontViewPosition < FrontViewPositionRightMostRemoved && _frontViewPosition > FrontViewPositionLeftSideMostRemoved && _frontViewPosition != FrontViewPositionNone);
     
+    
+    #pragma mark <CUSTOMIZATION> Added Overlay And Tap Gesture
     if ( positionIsChanging )
     {
         if ( [_delegate respondsToSelector:@selector(revealController:willMoveToPosition:)] )
@@ -1512,8 +1515,8 @@ const int FrontViewPositionNone = 0xff;
             lockingView.frame = _frontViewController.view.frame;
             lockingView.tag = 789;
             
-            UITapGestureRecognizer *tapRecognizer =
-            [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(revealToggleAnimated:)];
+            TouchDownGestureRecognizer *tapRecognizer =
+            [[TouchDownGestureRecognizer alloc] initWithTarget:self action:@selector(revealToggleAnimated:)];
             
             //tapRecognizer.delegate = self;
             [lockingView addGestureRecognizer:tapRecognizer];
@@ -1915,4 +1918,25 @@ NSString * const SWSegueRightIdentifier = @"sw_right";
 //
 //@end
 
+#pragma mark - <CUSTOMIZATION> Custom Tap Gesture
+
+#import <UIKit/UIGestureRecognizerSubclass.h>
+#import "SWRevealViewController.h"
+@implementation TouchDownGestureRecognizer
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    if (self.state == UIGestureRecognizerStatePossible) {
+        self.state = UIGestureRecognizerStateRecognized;
+    }
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    self.state = UIGestureRecognizerStateFailed;
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    self.state = UIGestureRecognizerStateFailed;
+}
+
+
+@end
 

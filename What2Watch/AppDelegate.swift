@@ -73,6 +73,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 //                
 //                let navigationController = UINavigationController(rootViewController: mainRevealController)
 //                navigationController.navigationBarHidden = true
+//                
+//                self.window?.backgroundColor = UIColor.clearColor()
 //                self.window!.rootViewController = mainRevealController
 //                self.window?.makeKeyAndVisible()
 //            }
