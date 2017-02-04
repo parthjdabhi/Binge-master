@@ -55,31 +55,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             print("Loggedin in user: \(user)")
             print("swipedMovieCount : \(NSUserDefaults.standardUserDefaults().integerForKey("swipedMovieCount") as Int ?? 0)")
             
-//            if let swipedMovieCount = NSUserDefaults.standardUserDefaults().integerForKey("swipedMovieCount") as Int? where swipedMovieCount >= 50 {
-//                print("swipedMovieCount : ",swipedMovieCount)
-//                
-//                //if User has rate more than [ ] no of moview redirect hem to recommendation page
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                
-//                let destinationController = storyboard.instantiateViewControllerWithIdentifier("RecomendationVC") as? RecomendationVC
-//                let frontNavigationController = UINavigationController(rootViewController: destinationController!)
-//                frontNavigationController.navigationBarHidden = true
-//                
-//                let rearViewController = storyboard.instantiateViewControllerWithIdentifier("MySlideMenuController") as? MySlideMenuController
-//                let mainRevealController = SWRevealViewController()
-//                
-//                mainRevealController.rearViewController = rearViewController
-//                mainRevealController.frontViewController = frontNavigationController
-//                
-//                let navigationController = UINavigationController(rootViewController: mainRevealController)
-//                navigationController.navigationBarHidden = true
-//                
-//                self.window?.backgroundColor = UIColor.clearColor()
-//                self.window!.rootViewController = mainRevealController
-//                self.window?.makeKeyAndVisible()
-//            }
-//            else
-//            {
+            if let swipedMovieCount = NSUserDefaults.standardUserDefaults().integerForKey("swipedMovieCount") as Int? where swipedMovieCount >= 50 {
+                print("swipedMovieCount : ",swipedMovieCount)
+                
+                //if User has rate more than [ ] no of moview redirect hem to recommendation page
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let destinationController = storyboard.instantiateViewControllerWithIdentifier("RecomendationVC") as? RecomendationVC
+                let frontNavigationController = UINavigationController(rootViewController: destinationController!)
+                frontNavigationController.navigationBarHidden = true
+                
+                let rearViewController = storyboard.instantiateViewControllerWithIdentifier("MySlideMenuController") as? MySlideMenuController
+                let mainRevealController = SWRevealViewController()
+                
+                mainRevealController.rearViewController = rearViewController
+                mainRevealController.frontViewController = frontNavigationController
+                
+                let navigationController = UINavigationController(rootViewController: mainRevealController)
+                navigationController.navigationBarHidden = true
+                
+                self.window?.backgroundColor = UIColor.clearColor()
+                self.window!.rootViewController = mainRevealController
+                self.window?.makeKeyAndVisible()
+            }
+            else
+            {
                 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let rootViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SWRevealViewController") as? UIViewController
                 let navigationController = UINavigationController(rootViewController: rootViewController!)
@@ -87,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                 self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
                 self.window!.rootViewController = navigationController
                 self.window!.makeKeyAndVisible()
-//            }
+            }
         }
         
 //        let movieDetail = "http://www.omdbapi.com/"  //http:// www.omdbapi.com/?i=(*imdbID*)&plot=short&r=json

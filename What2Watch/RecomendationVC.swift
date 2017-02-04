@@ -141,6 +141,7 @@ class RecomendationVC: UIViewController {
             AppState.sharedInstance.My_Like_top2000 = []
             AppState.sharedInstance.OUser_Like_top2000 = []
             AppState.sharedInstance.My_Like_Recom_MovieID_top2000 = []
+            AppState.sharedInstance.My_Dislike_MovieID_top2000 = []
             
             print("Operation Time : \(dateStart) -- \(NSDate())  ==--> \(NSDate().timeIntervalSinceDate(dateStart))")
             
@@ -168,10 +169,14 @@ class RecomendationVC: UIViewController {
                                 if let movieSwiped = MySwipe[key] as? [String:AnyObject] {
                                     // All Movie Liked by me
                                     if let entryStatus = movieSwiped[status] as? String
-                                        where entryStatus == status_like
                                     {
-                                        AppState.sharedInstance.My_Like_MovieID_top2000.append(movieSwiped["imdbID"] as? String ?? "")
-                                        self.movieSwiped.append(movieSwiped)
+                                        if entryStatus == status_like {
+                                            AppState.sharedInstance.My_Like_MovieID_top2000.append(movieSwiped["imdbID"] as? String ?? "")
+                                            self.movieSwiped.append(movieSwiped)
+                                        }
+                                        else if entryStatus == status_dislike {
+                                            AppState.sharedInstance.My_Dislike_MovieID_top2000.append(movieSwiped["imdbID"] as? String ?? "")
+                                        }
                                     }
                                 }
                              }
@@ -203,6 +208,14 @@ class RecomendationVC: UIViewController {
                 
                 print("My Liked Movie List : \(AppState.sharedInstance.My_Like_MovieID_top2000)")
                 
+                //Filter My Disliked movie from tohers Liked movie list
+//                AppState.sharedInstance.OUser_Like_top2000 = AppState.sharedInstance.OUser_Like_top2000.filter({ (movieSwiped:[String:AnyObject]) -> Bool in
+//                    if let imdbID = movieSwiped["imdbID"] as? String where AppState.sharedInstance.My_Dislike_MovieID_top2000.contains(imdbID) {
+//                        return false
+//                    }
+//                    return true
+//                })
+                
                 if AppState.sharedInstance.My_Like_top2000.count > 0
                     && AppState.sharedInstance.My_Like_MovieID_top2000.count > 0
                     //&& AppState.sharedInstance.accu_All_top2000?.count > 0
@@ -216,8 +229,15 @@ class RecomendationVC: UIViewController {
                         
                         print("Compare \(AppState.sharedInstance.OUser_Like_top2000.count) Users Like Entry count")
                         
-                        for ThisUserSwipedLikeEntry in AppState.sharedInstance.OUser_Like_top2000
+                        for var ThisUserSwipedLikeEntry in AppState.sharedInstance.OUser_Like_top2000
                         {
+                            ThisUserSwipedLikeEntry = ThisUserSwipedLikeEntry.filter({ (movieSwiped:[String:AnyObject]) -> Bool in
+                                if let imdbID = movieSwiped["imdbID"] as? String where AppState.sharedInstance.My_Dislike_MovieID_top2000.contains(imdbID) {
+                                    return false
+                                }
+                                return true
+                            })
+
                             print("ThisUserSwipedLikeEntry : \(ThisUserSwipedLikeEntry.count)")
                             
                             if ThisUserSwipedLikeEntry.count >= self.MinLikeMovieToMatch
@@ -397,6 +417,7 @@ class RecomendationVC: UIViewController {
         let posterURL = "http://img.omdbapi.com/?i=\(imdbID)&apikey=57288a3b&h=1000"
         let posterNSURL = NSURL(string: "\(posterURL)")
         
+        //http://www.omdbapi.com/?apikey=57288a3b&i=tt0090605&plot=short&r=json
         print(" \(index) Movie: \(imdbID) , Image: \(posterURL)")
         
         self.imgPoster?.setImageWithURL(posterNSURL, placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions.AllowInvalidSSLCertificates, usingActivityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)

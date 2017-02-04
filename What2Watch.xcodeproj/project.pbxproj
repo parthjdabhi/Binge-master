@@ -27,6 +27,9 @@
 		5E36492A1DBF5AA000E7E09F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3649291DBF5AA000E7E09F /* Helpers.swift */; };
 		5EAAB95D1D78053E009199A5 /* RecomendationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAAB95C1D78053E009199A5 /* RecomendationVC.swift */; };
 		5EAD89471D6864B80058AC3E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD89461D6864B80058AC3E /* main.swift */; };
+		5EADA0931E4602AC009F7A7B /* movieSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EADA0921E4602AC009F7A7B /* movieSearchController.swift */; };
+		5EADA0961E460427009F7A7B /* MovieSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EADA0941E460427009F7A7B /* MovieSearchTableViewCell.swift */; };
+		5EADA0971E460427009F7A7B /* MovieSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EADA0951E460427009F7A7B /* MovieSearchTableViewCell.xib */; };
 		5ECD100E1D672CB900EC54A8 /* BackgroundAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD100A1D672CB900EC54A8 /* BackgroundAnimationViewController.swift */; };
 		5ECD100F1D672CB900EC54A8 /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD100B1D672CB900EC54A8 /* BackgroundKolodaAnimator.swift */; };
 		5ECD10101D672CB900EC54A8 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD100C1D672CB900EC54A8 /* CustomKolodaView.swift */; };
@@ -193,6 +196,9 @@
 		5E3649291DBF5AA000E7E09F /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		5EAAB95C1D78053E009199A5 /* RecomendationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecomendationVC.swift; sourceTree = "<group>"; };
 		5EAD89461D6864B80058AC3E /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		5EADA0921E4602AC009F7A7B /* movieSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = movieSearchController.swift; sourceTree = "<group>"; };
+		5EADA0941E460427009F7A7B /* MovieSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieSearchTableViewCell.swift; sourceTree = "<group>"; };
+		5EADA0951E460427009F7A7B /* MovieSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieSearchTableViewCell.xib; sourceTree = "<group>"; };
 		5ECD100A1D672CB900EC54A8 /* BackgroundAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundAnimationViewController.swift; sourceTree = "<group>"; };
 		5ECD100B1D672CB900EC54A8 /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundKolodaAnimator.swift; sourceTree = "<group>"; };
 		5ECD100C1D672CB900EC54A8 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
@@ -422,6 +428,16 @@
 			name = "Menu Page";
 			sourceTree = "<group>";
 		};
+		5EADA0981E460433009F7A7B /* Movie Search */ = {
+			isa = PBXGroup;
+			children = (
+				5EADA0921E4602AC009F7A7B /* movieSearchController.swift */,
+				5EADA0941E460427009F7A7B /* MovieSearchTableViewCell.swift */,
+				5EADA0951E460427009F7A7B /* MovieSearchTableViewCell.xib */,
+			);
+			name = "Movie Search";
+			sourceTree = "<group>";
+		};
 		5ECD0FFA1D66D59700EC54A8 /* Movie Swiping */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +522,7 @@
 				DA21C4281D39409400E6843E /* AppDelegate.swift */,
 				DA21C4741D39460A00E6843E /* Login/Signup */,
 				DA21C42A1D39409400E6843E /* MainScreenViewController.swift */,
+				5EADA0981E460433009F7A7B /* Movie Search */,
 				5ECD0FFA1D66D59700EC54A8 /* Movie Swiping */,
 				5ECD1B171D62EC4F00C301DF /* New Screen */,
 				DA21C4751D39462E00E6843E /* Helper & Utilities */,
@@ -887,6 +904,7 @@
 				DA1200D41D4A641200D5EC20 /* Background8.png in Resources */,
 				DAC022891D3EA7E200821F05 /* I agree to What2Watch’s Terms and Conditions and have read the .png in Resources */,
 				DAE64BD81D3CAB33006940AE /* Grey Box.png in Resources */,
+				5EADA0971E460427009F7A7B /* MovieSearchTableViewCell.xib in Resources */,
 				DA1200B81D49586800D5EC20 /* Improve-accuracy-page_0000_status_bar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1054,8 +1072,10 @@
 				DAA481DB1D4A8F5300CD962B /* EmailViewController.swift in Sources */,
 				5E00826D1D55F9A6009DED1E /* WatchlistViewController.swift in Sources */,
 				5ECD1B191D62EDE900C301DF /* MyProfileViewController.swift in Sources */,
+				5EADA0931E4602AC009F7A7B /* movieSearchController.swift in Sources */,
 				5ECD1B341D631DFA00C301DF /* MovieListTableViewCell.swift in Sources */,
 				5EAAB95D1D78053E009199A5 /* RecomendationVC.swift in Sources */,
+				5EADA0961E460427009F7A7B /* MovieSearchTableViewCell.swift in Sources */,
 				DAA481DD1D4A94E600CD962B /* NameViewController.swift in Sources */,
 				DA21C42B1D39409400E6843E /* MainScreenViewController.swift in Sources */,
 				5E36492A1DBF5AA000E7E09F /* Helpers.swift in Sources */,

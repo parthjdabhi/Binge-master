@@ -33,6 +33,7 @@ class AppState: NSObject {
     var OUser_Like_top2000: [Array<[String:AnyObject]>] = []
     var My_Like_top2000: Array<[String:AnyObject]> = []      //[Dictionary<String,String>], Array<[String:AnyObject]>
     var My_Like_MovieID_top2000: Array<String> = []
+    var My_Dislike_MovieID_top2000: Array<String> = []
     var My_Like_Recom_MovieID_top2000: Array<String> = []
     
     var movies: Array<[String:AnyObject]>? = []

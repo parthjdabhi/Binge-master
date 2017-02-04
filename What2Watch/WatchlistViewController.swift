@@ -43,7 +43,6 @@ class WatchlistViewController: UIViewController {
                 self.movieWatched.removeAll()
                 
                 if snapshot.exists() {
-                    
                     print(snapshot.childrenCount)
                     //let swiped = snapshot.valueInExportFormat() as? NSDictionary
                     let enumerator = snapshot.children

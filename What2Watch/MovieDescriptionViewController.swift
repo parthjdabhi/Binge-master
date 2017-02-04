@@ -105,31 +105,37 @@ class MovieDescriptionViewController: UIViewController, UITextFieldDelegate, Nav
     }
     
     @IBAction func actionBack(sender: AnyObject) {
-        //self.navigationController?.popViewControllerAnimated(true)
-        self.navigationController?.tr_popViewController({ () -> Void in
-            print("Pop finished.")
-        })
-        modalDelegate?.modalViewControllerDismiss(callbackData: ["title":"test" ?? ""])
+        self.navigationController?.popViewControllerAnimated(true)
+//        self.navigationController?.tr_popViewController({ () -> Void in
+//            print("Pop finished.")
+//        })
+//        modalDelegate?.modalViewControllerDismiss(callbackData: ["title":"test" ?? ""])
     }
     
     @IBAction func actionSearch(sender: AnyObject)
     {
-        let alertReport = UIAlertController(title: "Report", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        let noTitle = UIAlertAction(title: "No title on poster", style: UIAlertActionStyle.Default) { (action) in
+        let alertReport = UIAlertController(title: "Report", message: "Do you want to mark this movie  as..", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        let noTitle = UIAlertAction(title: "No title on poster", style: .Default) { (action) in
             print("No title on poster")
         }
         alertReport.addAction(noTitle)
-        let inappropriate = UIAlertAction(title: "Inappropriate Content", style: UIAlertActionStyle.Default) { (action) in
+        let inappropriate = UIAlertAction(title: "Inappropriate Content", style: .Default) { (action) in
             print("Inappropriate Content")
         }
         alertReport.addAction(inappropriate)
-        let Other = UIAlertAction(title: "Other", style: UIAlertActionStyle.Default) { (action) in
+        let Other = UIAlertAction(title: "Other", style: .Default) { (action) in
             print("Other")
         }
         alertReport.addAction(Other)
+        
+        let dismiss = UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil)
+        alertReport.addAction(dismiss)
+        
         self.navigationController?.presentViewController(alertReport, animated: true) {
             print("Alert presented")
         }
+        
     }
 }
 

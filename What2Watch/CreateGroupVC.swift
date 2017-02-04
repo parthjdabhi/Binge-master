@@ -355,8 +355,8 @@ extension CreateGroupVC: UISearchBarDelegate {
 
 extension CreateGroupVC: searchDelegate {
     
-    func onItemSelected(bar: Dictionary<String,AnyObject>) {
-        selectedUsers.append(bar)
+    func onItemSelected(item: Dictionary<String,AnyObject>) {
+        selectedUsers.append(item)
         self.lblMembersCount.text = "Member : \(selectedUsers.count)"
 //        let index = filteredBars.indexOf {
 //            //($0["key"] as? String != nil && bar["key"] as? String != nil)

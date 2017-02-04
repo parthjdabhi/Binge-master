@@ -11,6 +11,7 @@ import Firebase
 import SDWebImage
 import SWRevealViewController
 import UIActivityIndicator_for_SDWebImage
+import SVProgressHUD
 
 import Koloda
 import pop
@@ -24,7 +25,7 @@ private let frameAnimationSpringSpeed: CGFloat = 16
 private let kolodaCountOfVisibleCards = 2
 private let kolodaAlphaValueSemiTransparent: CGFloat = 0.05
 
-class MainScreenViewController: UIViewController, ModalTransitionDelegate {
+class MainScreenViewController: UIViewController, ModalTransitionDelegate, UINavigationControllerDelegate {
  
     var tr_presentTransition: TRViewControllerTransitionDelegate?
     
@@ -49,7 +50,12 @@ class MainScreenViewController: UIViewController, ModalTransitionDelegate {
     var accu_movies:Array<[String:AnyObject]> = []
     
     var lastSwipedMovie:String?
-
+    
+    var searchResultController:movieSearchController!
+    var searchString:String = ""
+    var movieSearched:Array<[String:AnyObject]> = []
+    var myTimer:NSTimer = NSTimer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,6 +75,9 @@ class MainScreenViewController: UIViewController, ModalTransitionDelegate {
         imgInstruction.addGestureRecognizer(imgTapGesture)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainScreenViewController.applicationDidTimout(_:)), name: UIApplicationTimer.ApplicationDidTimoutNotification, object: nil)
+        
+        searchResultController = movieSearchController()
+        searchResultController.delegate = self
         
         // Init menu button action for menu
         if let revealVC = self.revealViewController() {
@@ -155,7 +164,13 @@ class MainScreenViewController: UIViewController, ModalTransitionDelegate {
     }
     
     @IBAction func onSearchButtonAction(sender: AnyObject) {
-        OpenMovieDescription(ForIndex: Int(cardHolderView.currentCardIndex))
+        //OpenMovieDescription(ForIndex: Int(cardHolderView.currentCardIndex))
+        
+        let searchController = UISearchController(searchResultsController: searchResultController)
+        searchController.searchBar.delegate = self
+        //searchController.searchBar.text = self.searchBar.text
+        //searchController.searchBar.showsSearchResultsButton = true
+        self.presentViewController(searchController, animated: true, completion: nil)
     }
     
     /**
@@ -479,24 +494,24 @@ class MainScreenViewController: UIViewController, ModalTransitionDelegate {
     }
     
     func OpenMovieDescription(ForIndex index:Int) {
-        //        let movieDescriptionViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MovieDescriptionViewController") as! MovieDescriptionViewController!
-        //        movieDescriptionViewController.movieDetail = movies[Int(index)] as? [String:String]
-        //        self.navigationController?.pushViewController(movieDescriptionViewController, animated: true)
+                let movieDescriptionViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MovieDescriptionViewController") as! MovieDescriptionViewController!
+                movieDescriptionViewController.movieDetail = movies[Int(index)] as? [String:String]
+                self.navigationController?.pushViewController(movieDescriptionViewController, animated: true)
         
-        let updateTransition1: TRPushTransitionMethod = .Blixt(keyView: self.cardHolderView, to: CGRect(x: self.cardHolderView.frame.size.width/3, y: self.cardHolderView.frame.size.height/2, width: 0, height: 0))
-        //let updateTransition2: TRPushTransitionMethod = .IBanTang(keyView: self.cardHolderView)
-        
-        let movieDescriptionViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MovieDescriptionViewController") as! MovieDescriptionViewController!
-        movieDescriptionViewController.movieDetail = movies[Int(index)] as? [String:String]
-        //navigationController?.tr_pushViewController(movieDescriptionViewController, method: updateTransition1)
-        
-        
-//        var trans1 = PresentTransition(name: "Twitter", imageName: "Twitter60x60", presentMethod: .Twitter, interactive: false)
-        
-        movieDescriptionViewController.modalDelegate = self
-        tr_presentViewController(movieDescriptionViewController, method: TRPresentTransitionMethod.Twitter, statusBarStyle: TRStatusBarStyle.Default) {
-            print("Present finished.")
-        }
+//        let updateTransition1: TRPushTransitionMethod = .Blixt(keyView: self.cardHolderView, to: CGRect(x: self.cardHolderView.frame.size.width/3, y: self.cardHolderView.frame.size.height/2, width: 0, height: 0))
+//        //let updateTransition2: TRPushTransitionMethod = .IBanTang(keyView: self.cardHolderView)
+//        
+//        let movieDescriptionViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MovieDescriptionViewController") as! MovieDescriptionViewController!
+//        movieDescriptionViewController.movieDetail = movies[Int(index)] as? [String:String]
+//        //navigationController?.tr_pushViewController(movieDescriptionViewController, method: updateTransition1)
+//        
+//        
+////        var trans1 = PresentTransition(name: "Twitter", imageName: "Twitter60x60", presentMethod: .Twitter, interactive: false)
+//        
+//        movieDescriptionViewController.modalDelegate = self
+//        tr_presentViewController(movieDescriptionViewController, method: TRPresentTransitionMethod.Twitter, statusBarStyle: TRStatusBarStyle.Default) {
+//            print("Present finished.")
+//        }
         
         //        let updateTransition3: TRPresentTransitionMethod = .Elevate(maskView: self.cardHolderView, to: UIScreen.mainScreen().tr_center)
         //        let nav = UINavigationController(rootViewController: movieDescriptionViewController)
@@ -579,6 +594,7 @@ extension MainScreenViewController: KolodaViewDataSource {
     }
     
     func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
+        
         let imgPoster = UIImageView(frame: koloda.frame)
         let imdbID = movies[Int(index)]["imdbID"] as? String ?? ""
         let posterURL = "http://img.omdbapi.com/?i=\(imdbID)&apikey=57288a3b&h=1000"
@@ -586,6 +602,7 @@ extension MainScreenViewController: KolodaViewDataSource {
         
         print(" \(index) Movie: \(imdbID) , Image: \(posterURL)")
         imgPoster.setImageWithURL(posterNSURL, placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions.AllowInvalidSSLCertificates, usingActivityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+        
         return imgPoster
 //        return UIImageView(image: UIImage(named: "cards_\(index + 1)"))
     }
@@ -786,5 +803,155 @@ extension MainScreenViewController: KolodaViewDataSource {
     // create a random percent, with a precision of one decimal place
     func randomPercent() -> Double {
         return Double(arc4random() % 1000) / 10.0;
+    }
+    
+    
+    //MARK: Search
+    // Perform the search.
+    private func doSearch(showLoader:Bool = true)
+    {
+        if showLoader == true {
+            //SVProgressHUD.showWithStatus("Searching..")
+        }
+        //        barSearchResults = bars.filter({ (bar) -> Bool in
+        //            if let name = bar["venueName"] as? String {
+        //                return (name.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil) != nil) ? true : false
+        //            }
+        //            return false
+        //        })
+        //        print(barSearchResults.count)
+        //        searchResultController.reloadDataWithArray(barSearchResults)
+        
+        //        if isRefreshingData == true {
+        //            return
+        //        }
+        
+        //isRefreshingData = true
+        let myGroup = dispatch_group_create()
+        
+        dispatch_group_enter(myGroup)
+        
+        
+        SVProgressHUD.showWithStatus("Loading..")
+        FIRDatabase.database().reference().child("movies").child("top2000").queryOrderedByChild("movieTitle").queryStartingAtValue(searchString).observeEventType(.Value, withBlock: { snapshot in
+            
+            self.movieSearched.removeAll()
+            
+            print("\(NSDate().timeIntervalSince1970)")
+            //self.tblGroups.reloadData()
+            for child in snapshot.children {
+                
+                var placeDict = Dictionary<String,AnyObject>()
+                let childDict = child.valueInExportFormat() as! NSDictionary
+                //print(childDict)
+                
+                let snap = child as! FIRDataSnapshot
+                //let jsonDic = NSJSONSerialization.JSONObjectWithData(childDict, options: NSJSONReadingOptions.MutableContainers, error: &error) as Dictionary<String, AnyObject>;
+                for key : AnyObject in childDict.allKeys {
+                    let stringKey = key as! String
+                    if let keyValue = childDict.valueForKey(stringKey) as? String {
+                        placeDict[stringKey] = keyValue
+                    } else if let keyValue = childDict.valueForKey(stringKey) as? Double {
+                        placeDict[stringKey] = "\(keyValue)"
+                    }
+                    else if let keyValue = childDict.valueForKey(stringKey) as? Dictionary<String,AnyObject> {
+                        placeDict[stringKey] = keyValue
+                    }
+                    else if let keyValue = childDict.valueForKey(stringKey) as? NSDictionary {
+                        placeDict[stringKey] = keyValue
+                    }
+                }
+                placeDict["key"] = child.key
+                
+                self.movieSearched.append(placeDict)
+                //print(placeDict)
+            }
+            dispatch_group_leave(myGroup)
+        })
+        dispatch_group_notify(myGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+            dispatch_async(dispatch_get_main_queue()) {
+                // update UI
+                SVProgressHUD.dismiss()
+                //self.isRefreshingData = false
+                
+                print(self.movieSearched.count)
+                self.searchResultController.reloadDataWithArray(self.movieSearched)
+            }
+        }
+    }
+}
+
+extension MainScreenViewController: UISearchBarDelegate {
+    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+        //        let searchController = UISearchController(searchResultsController: searchResultController)
+        //        searchController.searchBar.delegate = self
+        //        searchController.searchBar.text = self.searchBar.text
+        //        //searchController.searchBar.showsSearchResultsButton = true
+        //        self.presentViewController(searchController, animated: true, completion: nil)
+        //return false;
+        searchBar.setShowsCancelButton(true, animated: true)
+        return true;
+    }
+    
+    func searchBarShouldEndEditing(searchBar: UISearchBar) -> Bool {
+        if let searchStr = searchBar.text {
+            print(searchStr)
+            searchString = searchStr
+            searchBar.resignFirstResponder()
+            doSearch()
+            searchResultController.dismissViewControllerAnimated(true, completion: nil)
+        }
+        //searchBar.setShowsCancelButton(false, animated: true)
+        return true;
+    }
+    
+    func searchBarBookmarkButtonClicked(searchBar: UISearchBar) {
+        print("Bookmark")
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchString = ""
+        searchBar.resignFirstResponder()
+        //doSearchSuggestion()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchString = searchBar.text!
+        searchBar.resignFirstResponder()
+        //doSearchSuggestion()
+        //self.searchBar.text = searchString
+        doSearch()
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+        //myTimer.invalidate()
+        searchString = searchText
+        //doSearch()
+        myTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(CreateGroupVC.searchInTime), userInfo: nil, repeats: false)
+    }
+    
+    func searchInTime() {
+        doSearch()
+    }
+}
+
+extension MainScreenViewController: searchDelegate {
+    
+    func onItemSelected(movie: Dictionary<String,AnyObject>) {
+        
+        print(" searchDelegate - onItemSelected :  \(movie)")
+        
+        //selectedUsers.append(bar)
+        //self.lblMembersCount.text = "Member : \(selectedUsers.count)"
+        //        let index = filteredBars.indexOf {
+        //            //($0["key"] as? String != nil && bar["key"] as? String != nil)
+        //            if let key1 = $0["key"] as? String, key2 = bar["key"] as? String where key1 == key2 {
+        //                return true
+        //            }
+        //            return false
+        //        }
+        
     }
 }
